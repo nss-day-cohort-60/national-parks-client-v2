@@ -11,7 +11,6 @@ export const NationalParks = () => {
 	return <Routes>
 		<Route path="/login" element={<Login />} />
 		<Route path="/register" element={<Register />} />
-		<Route path="parks/:park_id" element={<ParkPage/>}/>
 
 		<Route path="*" element={
 			<Authorized>
@@ -20,8 +19,8 @@ export const NationalParks = () => {
 					<ApplicationViews />
 				</>
 			</Authorized>
-
 		} />
+	<Route path="parks/:park_id" element={<ParkPage/>}/>
 	</Routes>
 }
 

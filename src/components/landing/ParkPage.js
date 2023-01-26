@@ -1,14 +1,29 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
+import { NavBar } from "../nav/NavBar"
 
 export const ParkPage = () => {
     
-    const park_id = useParams
+    const {park_id} = useParams()
     const [park, setPark] = useState()
 
+    useEffect (
+        () =>{
+            fetch(`http://localhost:8088/parks/${park_id}`)
+                .then(response => response.json())
+                .then((parkObject)=>{
+                    setPark(parkObject)
+            })
+        },
+        []
+    )
+
+    console.log(park)
+
     return<>
-    <h2>
-        HELLO
-    </h2>
+    <NavBar/>
+    <h1>
+        {park.name}
+    </h1>
     </>
 }
