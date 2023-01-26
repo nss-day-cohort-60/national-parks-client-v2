@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
-
+import { BlogFilter } from "../views/BlogFilter";
 export const Login = () => {
     const [email, set] = useState("")
     const navigate = useNavigate()
@@ -12,8 +12,8 @@ export const Login = () => {
         return fetch(`http://localhost:8088/users?email=${email}`)
             .then(res => res.json())
             .then(foundUsers => {
-                if (foundUsers.length === 1) {
-                    const user = foundUsers[0]
+                if (foundUsers.hasOwnProperty('id')) {
+                    const user = foundUsers
                     localStorage.setItem("np_user", JSON.stringify({
                         id: user.id,
                         staff: user.isRanger
@@ -26,7 +26,7 @@ export const Login = () => {
                 }
             })
     }
-
+    
     return (
         <main className="container--login">
             <section>
