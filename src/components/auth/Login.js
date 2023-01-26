@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
-
+import { BlogFilter } from "../views/BlogFilter";
 export const Login = () => {
     const [email, set] = useState("")
     const navigate = useNavigate()
@@ -26,7 +26,7 @@ export const Login = () => {
                 }
             })
     }
-
+    
     return (
         <main className="container--login">
             <section>
