@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
 
 export const BlogFilter = () => {
-    let park_id = 1
     const [blogs, setBlogs] = useState([{ }])
     const [parks, setParks] = useState([{ }])
+    const [searchTerm, setSearchTerm] = useState("")
 
     const filteredBlogFetcher = (park_id) => {
         return fetch(`http://localhost:8088/blogs?park_id=${park_id}`)
@@ -33,14 +33,24 @@ export const BlogFilter = () => {
         menuHTML()
     }, [parks, blogs])
 
+    useEffect(() => {
+        
+    }, [searchTerm])
+
     const menuHTML = () => {
         return (
-            <section className='blogFilter--container'>
-                <select onChange={ (e) => [ e.target.value == 0? getAllBlogs() : filteredBlogFetcher(e.target.value)]}>
-                    <option key={`park--0`} value={0}>All Parks</option>
-                    {parks.map(park => { return (<option key={`park--${park.id}`} value={park.id}>{park.name}</option>) })}
-                </select>
-                
+            <section className='blogFilterSearch--container'>
+                <div className="filter--container">
+                    <label>Filter Blogs by Park: </label>
+                    <select className="filter" onChange={ (e) => [ e.target.value == 0? getAllBlogs() : filteredBlogFetcher(e.target.value)]}>
+                        <option key={`park--0`} value={0}>All Parks</option>
+                        {parks.map(park => { return (<option key={`park--${park.id}`} value={park.id}>{park.name}</option>) })}
+                    </select>
+                </div>
+                <div className="search--container">
+                    <label>Search Blogs: </label>
+                    <input className="search" onChange={ (e) => {setSearchTerm(e.target.value)} } placeholder="type search terms here"/>
+                </div>
             </section>
         )
     }
