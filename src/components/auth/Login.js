@@ -12,8 +12,8 @@ export const Login = () => {
         return fetch(`http://localhost:8088/users?email=${email}`)
             .then(res => res.json())
             .then(foundUsers => {
-                if (foundUsers.length === 1) {
-                    const user = foundUsers[0]
+                if (foundUsers.hasOwnProperty('id')) {
+                    const user = foundUsers
                     localStorage.setItem("np_user", JSON.stringify({
                         id: user.id,
                         staff: user.isRanger
