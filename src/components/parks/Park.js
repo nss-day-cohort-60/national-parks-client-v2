@@ -13,9 +13,9 @@ export const Park = ({ park }) => {
             })  
         },
         []
-    )
+    )      
 
-        //{photos[0]["url"]}      
+    //{photos[0]["url"]}
 
     return <section className="park" key={`park--${park.id}`}>
             {park.name}
