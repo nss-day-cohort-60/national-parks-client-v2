@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
-import { BlogFilter } from "../views/BlogFilter";
+import { NavBar } from "../nav/NavBar";
+
 export const Login = () => {
     const [email, set] = useState("")
     const navigate = useNavigate()
@@ -26,9 +27,10 @@ export const Login = () => {
                 }
             })
     }
-    
+
     return (
         <main className="container--login">
+            <NavBar/>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1>Explore National Parks</h1>
