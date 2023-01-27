@@ -5,10 +5,10 @@ import { NavBar } from "../nav/NavBar"
 
 export const BlogContainer = () => {
     const [ searchTerms, setSearchTerms ] = useState(" ")
-    const [blogs, setBlogs] = useState([])
+    const [ blogs, setBlogs ] = useState([])
 
     return <>
-        < NavBar />
+        <NavBar />
         <BlogFilter searchSetterFunction={setSearchTerms} searchTerm={searchTerms} blogSetterFunction={setBlogs} blogs={blogs} />
         <Blogs searchTermsState={searchTerms} blogs={blogs}/>
     </>

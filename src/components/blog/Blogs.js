@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react"
 import "./Blogs.css"
-import { BlogFilter } from "./BlogFilter"
-import { NavBar } from "../nav/NavBar"
 
 
 export const Blogs = ({ searchTermState, blogs }) => {
