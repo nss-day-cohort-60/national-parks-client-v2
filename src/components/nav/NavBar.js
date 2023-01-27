@@ -46,10 +46,12 @@ export const NavBar = () => {
                     className="navbar__link"
                     to=""
                     onClick={() => {
-                      setLoggedIn(false)
-                      setName("");
-                      localStorage.removeItem("np_user");
-                      navigate("/", { replace: true });
+                      if (window.confirm(`${name}, do you really want to log out?`)) {
+                        setLoggedIn(false)
+                        setName("");
+                        localStorage.removeItem("np_user");
+                        navigate("/", { replace: true });
+                      }
                     }}
                   >
                     Logout
