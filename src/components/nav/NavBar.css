@@ -1,4 +1,14 @@
+.topbar {
+  display:flex;
+  align-items: center;
+  background-color: #333;
+}
 
+.welcome{
+    color: white;
+    margin-left: auto;
+    margin-right: 20px;
+}
 
 ul {
     list-style-type: none;

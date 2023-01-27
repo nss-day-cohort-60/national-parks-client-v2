@@ -6,6 +6,7 @@ import { NavBar } from "../nav/NavBar";
 export const Login = () => {
     const [email, set] = useState("")
     const navigate = useNavigate()
+   
 
     const handleLogin = (e) => {
         e.preventDefault()

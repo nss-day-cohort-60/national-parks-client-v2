@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link, useNavigate } from "react-router-dom";
 
-export const LoginModal = ({ show, handleClose }) => {
+export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
   const [email, setEmail] = useState("frodo@baggins.com");
   const navigate = useNavigate();
 
@@ -22,7 +22,7 @@ export const LoginModal = ({ show, handleClose }) => {
               staff: user.isRanger,
             })
           );
-
+        setLoggedIn(true);
          navigate("/home");
         } else {
           window.alert("Invalid login");
