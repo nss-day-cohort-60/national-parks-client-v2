@@ -1,37 +1,22 @@
 import { useEffect, useState } from "react"
 import "./Blogs.css"
-import { BlogFilter } from "../views/BlogFilter"
+import { BlogFilter } from "./BlogFilter"
 import { NavBar } from "../nav/NavBar"
 
 
-export const Blogs = ({ searchTermState }) => {
-    const [blogs, setBlogs] = useState([])
-    const [filteredBlogs, setFiltered] = useState([])
+export const Blogs = ({ searchTermState, blogs }) => {
+    const [filteredBlogs, setFiltered] = useState(blogs)
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/blogs`)
-            .then(response => response.json())
-            .then((data) => {
-                setBlogs(data)
-                setFiltered(data)
-            })
-        },
-        []
-    )
-     
-    useEffect(
-        () => {
-            const searchedBlogs = blogs.filter(blog => blog.post_body.includes(searchTermState))
-            setFiltered(searchedBlogs)
-            console.log(filteredBlogs)
+            setFiltered(blogs)
+            console.log(blogs)
         },
         [ searchTermState, blogs ]
     )
 
         return (
-         <div>
-            <NavBar />
+        <div>
             <div className="blogs-panel">
                 <article className="blogs" >
                     <header className="blogs-title">Blogs</header>

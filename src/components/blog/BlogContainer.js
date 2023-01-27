@@ -1,12 +1,15 @@
-import { BlogFilter } from "../views/BlogFilter"
+import { BlogFilter } from "./BlogFilter"
 import { useState } from "react"
 import { Blogs } from "./Blogs"
+import { NavBar } from "../nav/NavBar"
 
 export const BlogContainer = () => {
-    const [ searchTerms, setSearchTerms ] = useState()
+    const [ searchTerms, setSearchTerms ] = useState(" ")
+    const [blogs, setBlogs] = useState([])
 
     return <>
-        <BlogFilter setterFunction={setSearchTerms} />
-        <Blogs searchTermsState={searchTerms}/>
+        < NavBar />
+        <BlogFilter searchSetterFunction={setSearchTerms} searchTerm={searchTerms} blogSetterFunction={setBlogs} blogs={blogs} />
+        <Blogs searchTermsState={searchTerms} blogs={blogs}/>
     </>
 }  
