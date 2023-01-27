@@ -31,7 +31,6 @@ export const Blogs = ({ searchTermState }) => {
 
         return (
          <div>
-            <NavBar />
             <div className="blogs-panel">
                 <article className="blogs" >
                     <header className="blogs-title">Blogs</header>

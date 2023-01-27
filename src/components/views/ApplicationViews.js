@@ -6,7 +6,7 @@ import { BlogContainer } from "../blog/BlogContainer"
 export const ApplicationViews = () => {
 	return (
 		<Routes>
-			<Route path="/" element={
+			<Route path="/home" element={
 				<>
 					<Outlet />
 				</>
@@ -16,7 +16,6 @@ export const ApplicationViews = () => {
 					<BlogContainer />
 					</>
 				} />
-				<Route path="home" element={ <Landing /> } />
 			</Route>
 		</Routes>
 	)
