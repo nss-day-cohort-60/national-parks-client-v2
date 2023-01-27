@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-export const BlogFilter = () => {
+export const BlogFilter = ({ setterFunction }) => {
     const [blogs, setBlogs] = useState([{ }])
     const [parks, setParks] = useState([{ }])
     const [searchTerm, setSearchTerm] = useState("")
@@ -49,7 +49,7 @@ export const BlogFilter = () => {
                 </div>
                 <div className="search--container">
                     <label>Search Blogs: </label>
-                    <input className="search" onChange={ (e) => {setSearchTerm(e.target.value)} } placeholder="type search terms here"/>
+                    <input className="search" onChange={ (e) => {setterFunction(e.target.value)} } placeholder="type search terms here"/>
                 </div>
             </section>
         )
