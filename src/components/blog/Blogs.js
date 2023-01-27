@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import "./Blogs.css"
 import { BlogFilter } from "../views/BlogFilter"
+import { NavBar } from "../nav/NavBar"
 
 
 export const Blogs = ({ searchTermState }) => {
@@ -30,7 +31,7 @@ export const Blogs = ({ searchTermState }) => {
 
         return (
          <div>
-            
+            <NavBar />
             <div className="blogs-panel">
                 <article className="blogs" >
                     <header className="blogs-title">Blogs</header>
