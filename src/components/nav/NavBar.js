@@ -13,6 +13,7 @@ export const NavBar = () => {
 
     return (
       <>
+        <LoginModal show={show} handleClose={handleClose} />
         <ul>
           <li className="navbar__item active">
             <Link className="navbar__link" to="/home">
@@ -39,7 +40,8 @@ export const NavBar = () => {
                     localStorage.removeItem("np_user");
                     navigate("/", { replace: true });
                   }}
-                >Logout
+                >
+                  Logout
                 </Link>
               </li>
             </>
@@ -51,7 +53,6 @@ export const NavBar = () => {
             </li>
           )}
         </ul>
-        <LoginModal show={show} handleClose={handleClose} />
       </>
     );
 }
