@@ -22,5 +22,28 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: 0.5rem;;
+    border-radius: 0.5rem;
+}
+
+.park-page--container{
+    height: 100vh;
+    padding: 50px;
+}
+
+#park-page--info{
+    position: absolute;
+    width: 700px;
+    left: 50%;
+    top: 7.5%;
+}
+
+.park-page--sect-photo{
+    width: 350px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 25% 25%; 
+}
+
+#wildlife, #amenities, #campgrounds{
+    width: 700px;
 }
