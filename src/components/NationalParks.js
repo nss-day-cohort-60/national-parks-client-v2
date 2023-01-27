@@ -5,6 +5,7 @@ import { NavBar } from "./nav/NavBar"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { ParkPage } from "./landing/ParkPage"
+import { Blogs } from "./blog/Blogs"
 
 
 export const NationalParks = () => {
