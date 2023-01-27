@@ -1,33 +1,19 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
-import { Landing } from "./Landing"
 import "./landing.css"
 
-export const PhotoCarousel = () => {
-    const [photos, setPhotos]=useState([])
+export const PhotoCarousel = ({resource}) => {
     const [nextButton, nextButtonPressed]=useState(false)
     const [prevButton, prevButtonPressed] = useState(false)
     let [currentPhoto, setCurrentPhoto]= useState(0)
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/photos`)
-                .then(response => response.json())
-                .then((data) => {
-                    setPhotos(data)
-                })
-        },
-        []
-    )
-
-    useEffect(
-        () => {
             if(nextButton===true){
                 nextButtonPressed(false)
-                if(currentPhoto!==photos.length-1){
+                if(currentPhoto!== resource.length-1){
                 setCurrentPhoto(currentPhoto +1)
                 }else{
-                    setCurrentPhoto(photos[0].id)
+                    setCurrentPhoto(resource[0].id)
                 }
             }
         },
@@ -39,7 +25,7 @@ export const PhotoCarousel = () => {
             if(prevButton===true){
                 prevButtonPressed(false)
             if(currentPhoto===1){
-                setCurrentPhoto(photos.length-1)
+                setCurrentPhoto(resource.length-1)
             }else{
                 setCurrentPhoto(currentPhoto -1)
             }
@@ -55,17 +41,17 @@ export const PhotoCarousel = () => {
         <button className="carousel--button next" onClick={() => nextButtonPressed(true)}>&#187;</button>
         <ul>
     {
-        photos.map(
+        resource.map(
             (photo) => {
-                return photos.indexOf(photo) === currentPhoto 
+                return resource.indexOf(photo) === currentPhoto 
                 ?<>
                 <li className="carousel--slide" data-active key={photo.id} >
-                <img src={photo.url} alt='National Park image' />
+                <img src={photo.url} alt='uploaded image' />
                 </li>
                 </>
                 :<>
                 <li className="carousel--slide" key={photo.id} >
-                <img src={photo.url} alt='National Park image' />
+                <img src={photo.url} alt='uploaded image' />
                 </li>
                 </>
             }

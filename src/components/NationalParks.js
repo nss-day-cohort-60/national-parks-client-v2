@@ -4,8 +4,6 @@ import { ApplicationViews } from "./views/ApplicationViews"
 import { NavBar } from "./nav/NavBar"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
-import { ParkPage } from "./landing/ParkPage"
-import { Blogs } from "./blog/Blogs"
 
 
 export const NationalParks = () => {
@@ -21,7 +19,6 @@ export const NationalParks = () => {
 				</>
 			</Authorized>
 		} />
-	<Route path="parks/:park_id" element={<ParkPage/>}/>
 	</Routes>
 }
 

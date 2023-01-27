@@ -1,0 +1,6 @@
+.park-photos{
+    width: 700px;
+    height: 550px;
+    object-fit: cover;
+    object-position: 25% 25%; 
+}
