@@ -1,6 +1,26 @@
-.park-photos{
+.park-page--container{
+    height: 100vh;
+    padding: 50px;
+}
+
+#park-page--info{
+    position: absolute;
     width: 700px;
-    height: 550px;
-    object-fit: cover;
-    object-position: 25% 25%; 
+    left: 50%;
+    top: 7.5%;
+}
+
+.park-page--other{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.park-page--other--sect{
+    display: flex;
+    flex-direction: column;
+}
+
+#wildlife, #amenities, #campgrounds{
+    width: 700px;
 }
