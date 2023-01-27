@@ -24,7 +24,7 @@ export const PhotoCarousel = ({resource}) => {
         () => {
             if(prevButton===true){
                 prevButtonPressed(false)
-            if(currentPhoto===1){
+            if(currentPhoto===0){
                 setCurrentPhoto(resource.length-1)
             }else{
                 setCurrentPhoto(currentPhoto -1)
