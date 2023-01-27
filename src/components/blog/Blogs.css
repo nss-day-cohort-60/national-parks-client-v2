@@ -1,0 +1,17 @@
+.blogs-panel {
+    display: flex;
+}
+
+.blog-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+.blogs-title {
+    display: flex;
+    font-size: 20px;
+    margin-left: 20px;
+    font-weight: bold;
+    justify-content: center;
+}
