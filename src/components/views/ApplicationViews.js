@@ -7,7 +7,6 @@ export const ApplicationViews = () => {
 		<Routes>
 			<Route path="/home" element={ <Outlet /> } />
 			<Route path="blogs" element={ <BlogContainer /> } />
-			<Route path="parks/:park_id" element={ <ParkPage /> } />
 		</Routes>
 	)
 }
