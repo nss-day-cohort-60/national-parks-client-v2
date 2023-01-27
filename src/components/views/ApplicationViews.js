@@ -1,25 +1,13 @@
-import { NavBar } from "../nav/NavBar"
-import { Landing } from "../landing/Landing"
-import { ParkPage } from "../parks/ParkPage"
 import { Route, Outlet, Routes } from "react-router-dom"
 import { BlogContainer } from "../blog/BlogContainer"
+import { ParkPage } from "../parks/ParkPage"
 
 export const ApplicationViews = () => {
 	return (
 		<Routes>
-			<Route path="/" element={
-				<>
-					<Outlet />
-				</>
-			}>
-                <Route path="blogs" element={ 
-					<>
-					<BlogContainer />
-					</>
-				} />
-				<Route path="home" element={ <Landing /> } />
-				<Route path="parks/:park_id" element={ <ParkPage /> } />
-			</Route>
+			<Route path="/home" element={ <Outlet /> } />
+			<Route path="blogs" element={ <BlogContainer /> } />
+			<Route path="parks/:park_id" element={ <ParkPage /> } />
 		</Routes>
 	)
 }
