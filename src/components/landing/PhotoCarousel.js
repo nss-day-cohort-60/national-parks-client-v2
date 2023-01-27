@@ -13,7 +13,7 @@ export const PhotoCarousel = ({resource}) => {
                 if(currentPhoto!== resource.length-1){
                 setCurrentPhoto(currentPhoto +1)
                 }else{
-                    setCurrentPhoto(resource[0].id)
+                    setCurrentPhoto(0)
                 }
             }
         },

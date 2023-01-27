@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
+import { PhotoCarousel } from "../landing/PhotoCarousel"
 import "./Parks.css"
+import { NavBar } from "../nav/NavBar"
 
 export const ParkPage = () => {
     
@@ -31,15 +33,10 @@ export const ParkPage = () => {
     )
 
     return<>
+    <NavBar/>
     {console.log(parkPhotos)}
     <h1>{park.name}</h1>
     <p>{park.history}</p>
-    {
-        parkPhotos.map(
-            (photo) => {
-                return <img src={photo.url} className="park-photos" key={photo.id}/>
-            }
-        )
-    }
+    <PhotoCarousel resource = {parkPhotos}/>
     </>
 }
