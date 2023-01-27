@@ -3,9 +3,11 @@ import { BlogContainer } from "../blog/BlogContainer"
 
 export const ApplicationViews = () => {
 	return (
-		<Routes>
-			<Route path="/home" element={ <Outlet /> } />
-			<Route path="blogs" element={ <BlogContainer /> } />
-		</Routes>
-	)
+    <Routes>
+      <Route
+        path="/"
+        element={<Outlet />} />
+      <Route path="blogs" element={<BlogContainer />} />
+    </Routes>
+  );
 }
