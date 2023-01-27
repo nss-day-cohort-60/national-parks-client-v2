@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Park } from "./Park"
+import "./parks.css" 
 
 
 export const ParkList = () => {

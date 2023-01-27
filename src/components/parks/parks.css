@@ -1,0 +1,26 @@
+.parks {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.park {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    width: 25rem;
+    height: 25rem;
+}
+
+.park--name {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.park--photo {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;;
+}
