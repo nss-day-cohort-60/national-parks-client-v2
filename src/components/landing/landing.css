@@ -2,9 +2,6 @@
     box-sizing: border-box;
 }
 
-body{
-    margin: 0;
-}
 .carousel {
     width: 700px;
     height: 550px;
