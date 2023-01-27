@@ -3,7 +3,6 @@ import { useState, useEffect } from "react"
 import { PhotoCarousel } from "../landing/PhotoCarousel"
 import "./Parks.css"
 import { NavBar } from "../nav/NavBar"
-import { ParkWildlife } from "./ParkWildlife"
 
 export const ParkPage = () => {
 
@@ -36,7 +35,7 @@ export const ParkPage = () => {
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/wildlife?${park_id}`)
+            fetch(`http://localhost:8088/wildlife?park_id=${park_id}`)
                 .then(response => response.json())
                 .then((wildlifeArray) => {
                     setWildlife(wildlifeArray)
@@ -57,15 +56,20 @@ export const ParkPage = () => {
             <p>{park.latitude},{park.longitude}</p>
             <h1></h1>
             </section>
-        </div>
-        <div>
+            <div>
+                <h1>Wildlife at {park.name}</h1>
             {
                 wildlife.map(
                     (animal) => {
-                        return <h1>{animal.name}</h1>
+                        return <>
+                        <h1>{animal.name}</h1>
+                        <img src={animal.image} />
+                        <p>{animal.information}</p>
+                        </>
                     }
                 )
             }
+        </div>
         </div>
     </>
 }
