@@ -16,7 +16,7 @@ export const ApplicationViews = () => {
 					<BlogContainer />
 					</>
 				} />
-				<Route path="/home" element={ <Landing /> } />
+				<Route path="home" element={ <Landing /> } />
 			</Route>
 		</Routes>
 	)

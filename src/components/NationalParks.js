@@ -14,7 +14,7 @@ export const NationalParks = () => {
       <Route path="/home" element={<Landing />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-
+      <Route path="/blogs" element={<Blogs />} />
       <Route
         path="*"
         element={
