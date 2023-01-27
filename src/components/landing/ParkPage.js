@@ -12,6 +12,7 @@ export const ParkPage = () => {
             fetch(`http://localhost:8088/parks/${park_id}`)
                 .then(response => response.json())
                 .then((parkObject)=>{
+                    console.log(parkObject)
                     setPark(parkObject)
             })
         },
@@ -22,8 +23,7 @@ export const ParkPage = () => {
 
     return<>
     <NavBar/>
-    <h1>
-        {park.name}
+    <h1>{park.name}
     </h1>
     </>
 }
