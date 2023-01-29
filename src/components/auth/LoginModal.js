@@ -52,7 +52,9 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
             </fieldset>
           </form>
           <h6>Not a member yet?</h6>
-          <Link to={"/register"}>Register Here</Link>
+          <Link to={"/register"} onClick={handleClose}>
+            Register Here
+          </Link>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

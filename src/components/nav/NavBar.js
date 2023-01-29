@@ -22,7 +22,17 @@ export const NavBar = () => {
 
     return (
       <>
-        <div className="topbar">
+        <div className="top_bar">
+          <div className="welcome">
+            {name ? (
+              `Welcome ${name}!`
+            ) : (
+              <span>
+                <img
+                  src="/park-explorer-high-resolution-logo-color-on-transparent-background.png" className="navbar__logo"/>
+              </span>
+            )}
+          </div>
           <ul>
             <li className="navbar__item active">
               <Link className="navbar__link" to="/home">
@@ -46,8 +56,12 @@ export const NavBar = () => {
                     className="navbar__link"
                     to=""
                     onClick={() => {
-                      if (window.confirm(`${name}, do you really want to log out?`)) {
-                        setLoggedIn(false)
+                      if (
+                        window.confirm(
+                          `${name}, do you really want to log out?`
+                        )
+                      ) {
+                        setLoggedIn(false);
                         setName("");
                         localStorage.removeItem("np_user");
                         navigate("/", { replace: true });
@@ -66,9 +80,12 @@ export const NavBar = () => {
               </li>
             )}
           </ul>
-          <div className="welcome">{name ? `Welcome ${name}` : ""}</div>
         </div>
-        <LoginModal show={show} handleClose={handleClose} setLoggedIn={setLoggedIn}/>
+        <LoginModal
+          show={show}
+          handleClose={handleClose}
+          setLoggedIn={setLoggedIn}
+        />
       </>
     );
 }

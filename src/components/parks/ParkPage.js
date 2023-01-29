@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { PhotoCarousel } from "../landing/PhotoCarousel"
 import "./parks.css"
-import { NavBar } from "../nav/NavBar"
+
 
 export const ParkPage = () => {
 
@@ -86,7 +86,6 @@ export const ParkPage = () => {
     }
 
     return <>
-        <NavBar />
         <div className="park-page--container">
             <PhotoCarousel resource={parkPhotos} />
             <section id="park-page--info">

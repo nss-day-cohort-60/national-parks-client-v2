@@ -8,7 +8,6 @@ export const BlogContainer = () => {
     const [ blogs, setBlogs ] = useState([])
 
     return <>
-        <NavBar />
         <BlogFilter searchSetterFunction={setSearchTerms} searchTerm={searchTerms} blogSetterFunction={setBlogs} blogs={blogs} />
         <Blogs searchTermsState={searchTerms} blogs={blogs}/>
     </>
