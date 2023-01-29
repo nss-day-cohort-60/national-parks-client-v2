@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link, useNavigate } from "react-router-dom";
+import "./Login.css";
 
 export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
   const [email, setEmail] = useState("frodo@baggins.com");
@@ -32,14 +33,17 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
 
   return (
     <>
-      <Modal show={show} onHide={handleClose} centered>
+      <Modal className="modal__container" show={show} onHide={handleClose} centered>
         <Modal.Header closeButton>
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form>
             <fieldset>
-              <label htmlFor="inputEmail"> Email address </label>
+              <label htmlFor="inputEmail" className="modal__email">
+                {" "}
+                Enter your email address:{" "}
+              </label>
               <input
                 type="email"
                 value={email}
@@ -51,7 +55,7 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
               />
             </fieldset>
           </form>
-          <h6>Not a member yet?</h6>
+          <h6 className="modal__register">Not a member yet?</h6>
           <Link to={"/register"} onClick={handleClose}>
             Register Here
           </Link>

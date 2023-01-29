@@ -1,45 +1,44 @@
 .top_bar {
-  display:flex;
+  display: flex;
   align-items: center;
   background-color: #333;
 }
 
-.welcome{
-    color: rgb(200, 236, 200);
-    margin-left: 5%;
-    font-size: 25px;
-    width: 10%;
+.welcome {
+  color: rgb(200, 236, 200);
+  margin-left: 2%;
+  margin-right: 1%;
+  font-size: 20px;
+  width: 10%;
 }
 
 .navbar__logo {
-   width: 65%;
-   margin-left: 40%;
-   padding-right: 20px;
-   padding-top: 2px;
-   padding-bottom: 2px;
+  width: 65%;
+  margin-left: 35%;
+  padding: 8px;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    display:flex;
-    justify-content: space-evenly;
-    width: 85%;
-  }  
-  
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  display: flex;
+  justify-content: left;
+  width: 85%;
+}
+
 li a {
-    display: block;
-    color:  rgb(200, 236, 200);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 20px;
-  }
-  
+  display: block;
+  color: rgb(200, 236, 200);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
 li a:hover {
-    background-color: #111;
-    color: green;
-  }
+  background-color: #111;
+  color: green;
+}
