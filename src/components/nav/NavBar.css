@@ -6,15 +6,13 @@
 
 .welcome {
   color: rgb(200, 236, 200);
-  margin-left: 2%;
-  margin-right: 1%;
   font-size: 20px;
-  width: 10%;
+  width: 20%;
 }
 
 .navbar__logo {
-  width: 65%;
-  margin-left: 35%;
+  width: 7%;
+  margin-left: 5%;
   padding: 8px;
 }
 
@@ -26,7 +24,7 @@ ul {
   background-color: #333;
   display: flex;
   justify-content: left;
-  width: 85%;
+  width: 100%;
 }
 
 li a {

@@ -22,14 +22,8 @@ export const NavBar = () => {
 
     return (
       <>
-        <div className="top_bar">
-          <div className="welcome">
-            {name ? (
-              `Welcome ${name}!`
-            ) : (
-              <span><img src="/np_logo2.png" className="navbar__logo"/></span>
-            )}
-          </div>
+        <div className="top_bar">   
+            <img src="/np_logo2.png" className="navbar__logo" />        
           <ul>
             <li className="navbar__item active">
               <Link className="navbar__link" to="/home">
@@ -77,7 +71,8 @@ export const NavBar = () => {
               </li>
             )}
           </ul>
-        </div>
+          <div className="welcome">{name ? `Welcome ${name}!` : ""}</div>
+          </div>
         <LoginModal
           show={show}
           handleClose={handleClose}
