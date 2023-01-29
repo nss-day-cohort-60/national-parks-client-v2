@@ -27,10 +27,7 @@ export const NavBar = () => {
             {name ? (
               `Welcome ${name}!`
             ) : (
-              <span>
-                <img
-                  src="/park-explorer-high-resolution-logo-color-on-transparent-background.png" className="navbar__logo"/>
-              </span>
+              <span><img src="/np_logo2.png" className="navbar__logo"/></span>
             )}
           </div>
           <ul>

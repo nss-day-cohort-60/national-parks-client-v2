@@ -6,15 +6,17 @@
 
 .welcome{
     color: rgb(200, 236, 200);
-    margin-left: 25px;
+    margin-left: 5%;
     font-size: 25px;
     width: 10%;
 }
 
 .navbar__logo {
-   width: 60%;
-   margin-left: 25px;
+   width: 65%;
+   margin-left: 40%;
    padding-right: 20px;
+   padding-top: 2px;
+   padding-bottom: 2px;
 }
 
 ul {
@@ -24,13 +26,11 @@ ul {
     overflow: hidden;
     background-color: #333;
     display:flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 85%;
-  }
+  }  
   
-  
-  
-  li a {
+li a {
     display: block;
     color:  rgb(200, 236, 200);
     text-align: center;
@@ -39,8 +39,7 @@ ul {
     font-size: 20px;
   }
   
-  /* Change the link color to #111 (black) on hover */
-  li a:hover {
+li a:hover {
     background-color: #111;
     color: green;
   }
