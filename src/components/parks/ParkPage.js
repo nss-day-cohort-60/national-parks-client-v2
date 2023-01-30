@@ -52,13 +52,13 @@ export const ParkPage = () => {
       });
   }, []);
 
-   useEffect(() => {
-     fetch(`http://localhost:8088/natural_attractions?park_id=${park_id}`)
-       .then((response) => response.json())
-       .then((data) => {
-         setNaturalAttractions(data);
-       });
-   }, []);
+  useEffect(() => {
+    fetch(`http://localhost:8088/natural_attractions?park_id=${park_id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setNaturalAttractions(data);
+      });
+  }, []);
 
   const Amenity = () => {
     return amenities.map((amenity) => {
@@ -124,12 +124,12 @@ export const ParkPage = () => {
 
           <h1>Natural Attractions at {park.name}</h1>
 
-          {naturalAttractions.map((attractions) => {
+          {naturalAttractions.map((attraction) => {
             return (
-              <>
-                <h3>{attractions.name}</h3>
-                <p>{attractions.description}</p>
-              </>
+              <div key={`attraction-${attraction.id}`}>
+                <h3>{attraction.name}</h3>
+                <p>{attraction.description}</p>
+              </div>
             );
           })}
         </div>
