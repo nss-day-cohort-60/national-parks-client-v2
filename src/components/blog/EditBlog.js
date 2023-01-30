@@ -67,7 +67,6 @@ export const EditBlog = ({ setEditModal, id }) => {
                                         required autoFocus
                                         type="text"
                                         className="form-control"
-                                        placeholder="Title"
                                         value={blog.title}
                                         onChange={
                                             (evt) => {
@@ -84,7 +83,6 @@ export const EditBlog = ({ setEditModal, id }) => {
                                             required autoFocus
                                             type="text"
                                             className="form-control"
-                                            placeholder="Write your blog here"
                                             value={blog.post_body}
                                             onChange={
                                                 (evt) => {
