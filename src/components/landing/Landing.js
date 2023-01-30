@@ -18,10 +18,7 @@ export const Landing = () => {
 
     console.log(photos)
     return <>
-        <div className="landing--top">
-            <h1 className="title--main">Park Explorer: Discover National Parks</h1>
             <PhotoCarousel resource={photos} />
-        </div>
         <ParkList />
     </>
 }

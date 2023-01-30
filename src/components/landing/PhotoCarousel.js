@@ -34,6 +34,41 @@ export const PhotoCarousel = ({resource}) => {
         [prevButton]
     )
 
+    const LandingCarousel = () => {
+    return <>
+    <div id="landing--top">
+    <h1 className="title--main">Park Explorer: Discover <span></span></h1>
+    <div className="carousel">
+        <button className="carousel--button prev" onClick={() => prevButtonPressed(true)} >&#171;</button>
+        <button className="carousel--button next" onClick={() => nextButtonPressed(true)}>&#187;</button>
+        <ul>
+    {
+        resource.map(
+            (photo) => {
+                let source = photo.url
+                return resource.indexOf(photo) === currentPhoto 
+                ?<>
+                {document.getElementById("landing--top").style.backgroundImage=`url(${source})`}
+                {document.getElementById("landing--top").style.backgroundRepeat=`none`}
+                {document.getElementById("landing--top").style.backgroundPosition=`center`}
+                <li className="carousel--slide" data-active key={photo.id} >
+                <img src={photo.url} alt='uploaded image' />
+                </li>
+                </>
+                :<>
+                <li className="carousel--slide" key={photo.id} >
+                <img src={photo.url} alt='uploaded image' />
+                </li>
+                </>
+            }
+        )
+    }
+    </ul>
+    </div>
+    </div>
+        </>
+    }
+
     const Carousel = () => {
         return <>
     <div className="carousel">
@@ -62,9 +97,17 @@ export const PhotoCarousel = ({resource}) => {
         </>
     }
 
+    const verifyPath = () => {
+        if(document.URL==="http://localhost:3000/home"){
+            return LandingCarousel()
+        } else if(document.URL.includes('http://localhost:3000/parks')){
+            return Carousel()
+        }
+    }
+
     return <>
         {
-            Carousel()
+            verifyPath()
         }
     </>
 }
