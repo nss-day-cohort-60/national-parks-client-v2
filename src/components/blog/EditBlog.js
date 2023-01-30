@@ -44,7 +44,6 @@ export const EditBlog = ({ setEditModal, id }) => {
             },
             body: JSON.stringify(blogToSendToAPI)
         })
-            .then(response => response.json())
             .then(() => {
                 setEditModal(false)
             })
