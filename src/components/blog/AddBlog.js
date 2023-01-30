@@ -112,7 +112,7 @@ return (
             </fieldset>
 
             <div className="form-group">
-                <button className=".close-modal" type="button" onClick={(e) => setModal(false)}>Cancel</button>
+                <button className="close-modal" type="button" onClick={(e) => setModal(false)}>Cancel</button>
                 <button className="save-blog" onClick={handleSaveButtonClick}>Save</button>
             </div>
             </div>

@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
 export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
-  const [email, setEmail] = useState("frodo@baggins.com");
+  const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = () => {
