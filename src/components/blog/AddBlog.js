@@ -12,7 +12,7 @@ const [blog, setBlog] = useState({
     date_created: 0,
     user_id: userObject.id,
     park_id: 0,
-    photo_id: 0
+    photo_url: 0
 })
 
 useEffect(
