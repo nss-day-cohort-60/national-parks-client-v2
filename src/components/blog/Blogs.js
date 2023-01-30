@@ -7,7 +7,6 @@ import { EditBlog } from "./EditBlog"
 export const Blogs = ({ searchTermState, blogs }) => {
     const [filteredBlogs, setFiltered] = useState(blogs)
     const [blogModal, setBlogModal] = useState(false)
-    const [editModal, setEditModal] = useState(false)
 
     useEffect(
         () => {
@@ -21,16 +20,11 @@ export const Blogs = ({ searchTermState, blogs }) => {
         setBlogModal(!blogModal)
     }
     
-    const toggleEditModal = () => {
-        setEditModal(!editModal)
-    }
-
         return (
         <div>
             <div className="blogs-panel">
                 <article className="blogs" >
                     <header className="blogs-title">Blogs</header>
-                    <button className="edit-blog" onClick={toggleEditModal}>Edit a Blog</button>
                     <button className="save-blog" onClick={toggleBlogModal}>Add a Blog</button>
                     <div className="blogs-block">
                         {blogs.map(
