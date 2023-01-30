@@ -1,10 +1,10 @@
-import { PhotoCarousel } from "./PhotoCarousel" 
+import { PhotoCarousel } from "./PhotoCarousel"
 import { ParkList } from "../parks/ParksList"
 import { useState, useEffect } from "react"
 import { NavBar } from "../nav/NavBar"
 
 export const Landing = () => {
-    const [photos, setPhotos]=useState([])
+    const [photos, setPhotos] = useState([])
 
     useEffect(
         () => {
@@ -19,9 +19,11 @@ export const Landing = () => {
 
     console.log(photos)
     return <>
-    <NavBar />
-    <h1 className="title--main">Explore National Parks</h1>
-    <PhotoCarousel resource = {photos} />
-    <ParkList />
+        <NavBar />
+        <div className="landing--top">
+            <h1 className="title--main">Explore National Parks</h1>
+            <PhotoCarousel resource={photos} />
+        </div>
+        <ParkList />
     </>
 }
