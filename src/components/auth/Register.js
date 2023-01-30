@@ -22,12 +22,16 @@ export const Register = (props) => {
             .then(res => res.json())
             .then(createdUser => {
                 if (createdUser.hasOwnProperty("id")) {
-                    localStorage.setItem("np_user", JSON.stringify({
+                    localStorage.setItem(
+                      "np_user",
+                      JSON.stringify({
                         id: createdUser.id,
-                        staff: createdUser.isRanger
-                    }))
-
+                        name: createdUser.first_name,
+                        staff: createdUser.isRanger,
+                      })
+                    );
                     navigate("/")
+                    window.location.reload(false);
                 }
             })
     }
