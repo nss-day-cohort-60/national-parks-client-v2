@@ -20,6 +20,14 @@ export const PhotoCarousel = ({resource}) => {
         [nextButton]
     )
 
+    useEffect (() =>{
+        const interval = setInterval(() => {
+            nextButtonPressed(!nextButton)
+        }, 4200)
+        return () => clearInterval(interval)
+    }, []
+    )
+
     useEffect(
         () => {
             if(prevButton===true){
