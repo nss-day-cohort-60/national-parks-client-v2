@@ -8,7 +8,10 @@ const container = document.getElementById("root")
 const root = createRoot(container)
 root.render(
     <BrowserRouter>
+        <div>
+        <NavBar />
         <NationalParks />
+        </div>
     </BrowserRouter>
 )
 

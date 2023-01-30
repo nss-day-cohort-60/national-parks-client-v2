@@ -1,0 +1,9 @@
+.modal__register {
+  margin-top: 20px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.modal__email {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
