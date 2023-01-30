@@ -28,7 +28,6 @@ useEffect(
         .then( (foundBlog) => {
             setBlog(foundBlog)
         })
-        
     },
     []
 )      
@@ -38,8 +37,8 @@ const handleSaveButtonClick = (click) => {
         ...blog,
     }
 
-    fetch(`http://localhost:8088/blogs`, {
-        method: "POST",
+    fetch(`http://localhost:8088/blogs/${id}`, {
+        method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },
@@ -89,6 +88,7 @@ return (
                             className="form-control"
                             placeholder="Write your blog here"
                             value={blog.post_body}
+                            defaultValue={blog.post_body}
                             onChange={
                                 (evt) => {
                                     const copy = { ...blog }
@@ -99,17 +99,17 @@ return (
                     </div>
                 </fieldset>
                 <div className="form-group">
-                    <select
+                    <select defaultValue={blog.park_id}
                         onChange={(event) => {
                             const copy = { ...blog }
                             copy.park_id = parseInt(event.target.value)
                             setBlog(copy)
                         }}
                     >
-                        <option value="" disabled selected>Select a park</option>
+                        <option value="" disabled>Select a park</option>
                         {parks.map((park) => {
                             return (
-                                <option key={park.id} value={park.id}>
+                                <option defaultValue={ park.id == blog.park_id ? "selected" : ""} key={park.id} value={park.id}>
                                     {park.name}
                                 </option>
                             )

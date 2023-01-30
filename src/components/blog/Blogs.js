@@ -27,7 +27,6 @@ export const Blogs = ({ searchTermState, blogs }) => {
 
         return (
         <div>
-            {editModal && <EditBlog setEditModal={setEditModal} />}
             <div className="blogs-panel">
                 <article className="blogs" >
                     <header className="blogs-title">Blogs</header>
