@@ -8,6 +8,7 @@ export const BlogContainer = () => {
     const [ blogs, setBlogs ] = useState([])
 
     return <>
+         <header className="blogs-title">Blogs</header>
         <BlogFilter searchSetterFunction={setSearchTerms} searchTerm={searchTerms} blogSetterFunction={setBlogs} blogs={blogs} />
         <Blogs searchTermsState={searchTerms} blogs={blogs}/>
     </>
