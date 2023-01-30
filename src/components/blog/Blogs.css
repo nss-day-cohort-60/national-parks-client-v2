@@ -1,11 +1,13 @@
 .blogs-panel {
     display: flex;
+    justify-content: center;
 }
 
 .blog-img {
     width: 100%;
     max-width: 300px;
     height: auto;
+    margin: 10px;
 }
 
 .blogs-title {
@@ -49,7 +51,7 @@ body.active-blogModal, body.active-editModal {
     background: #f1f1f1;
     padding: 14px 28px;
     border-radius: 3px;
-    max-width: 800px;
+    max-width: 1000px;
     min-width: 500px;
 }
 
@@ -66,5 +68,44 @@ body.active-blogModal, body.active-editModal {
 
 .title {
     font-size: 25px;
+    margin: 10px;
 }
 
+.blog-details {
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    max-width: 1000px;
+    
+}
+
+.secondRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid lightgray;
+    
+}
+
+.blogFilterSearch--container {
+display: flex;
+justify-content: space-around;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+.blog-post {
+    margin-bottom: 15px;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.blog-body {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

@@ -12,7 +12,7 @@ const [blog, setBlog] = useState({
     date_created: 0,
     user_id: userObject.id,
     park_id: 0,
-    photo_id: 0
+    photo_url: 0
 })
 
 useEffect(
@@ -75,6 +75,7 @@ return (
                 </div>
                 <fieldset>
                     <div className="form__group">
+                        <div className="blog-body">
                         <label htmlFor="description">Body:</label>
                         <input
                             required autoFocus
@@ -89,7 +90,7 @@ return (
                                     setBlog(copy)
                                 }
                             } />
-                    </div>
+                    </div></div>
                 </fieldset>
                 <div className="form__group">
                     <select
