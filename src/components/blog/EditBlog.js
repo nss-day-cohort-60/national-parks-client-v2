@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react"
 import "./Blogs.css"
-export const AddBlog = ({ setBlogModal, Date }) => {
+export const EditBlog = ({ setEditModal, id }) => {
 
 const localUser = localStorage.getItem("np_user")
 const userObject = JSON.parse(localUser)
 const [parks, setParks] = useState([])
 
 const [blog, setBlog] = useState({
+    id: id,
     title: "",
     post_body: "",
     date_created: 0,
@@ -21,7 +22,13 @@ useEffect(
         .then( res => res.json() )
         .then( (allParks) => {
             setParks(allParks)
-        })  
+        })
+        fetch(`http://localhost:8088/blogs/${id}`)
+        .then( res => res.json() )
+        .then( (foundBlog) => {
+            setBlog(foundBlog)
+        })
+        
     },
     []
 )      
@@ -40,7 +47,7 @@ const handleSaveButtonClick = (click) => {
     })
         .then(response => response.json())
         .then(() => {
-            setBlogModal(false)
+            setEditModal(false)
                 })
             .catch(error => console.log(error))
 
@@ -50,12 +57,11 @@ const handleSaveButtonClick = (click) => {
 return (
     <>
     
-        <form className="AddBlogForm">
-        <div className="blogModal">
+        <form className="EditBlogForm">
+        <div className="editModal">
                     <div className="overlay">
-                        {/* figure out how to route the boulder that the button was selected from and render the name, while holding the id */}
-                        <div className="blogModal-content">
-            <h2 className="BlogForm__title">Submit a Blog Post</h2>
+                        <div className="editModal-content">
+            <h2 className="BlogForm__title">Edit Blog Post</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="description">Title:</label>
@@ -65,6 +71,7 @@ return (
                         className="form-control"
                         placeholder="Title"
                         value={blog.title}
+                        defaultValue={blog.value}
                         onChange={
                             (evt) => {
                                 const copy = { ...blog }
@@ -112,7 +119,7 @@ return (
             </fieldset>
 
             <div className="form-group">
-                <button className=".close-blogModal" type="button" onClick={(e) => setBlogModal(false)}>Cancel</button>
+                <button className=".close-editModal" type="button" onClick={(e) => setEditModal(false)}>Cancel</button>
                 <button className="save-blog" onClick={handleSaveButtonClick}>Save</button>
             </div>
             </div>
