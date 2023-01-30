@@ -16,18 +16,18 @@
     justify-content: center;
 }
 
-body.active-modal {
+body.active-modal__container {
     overflow-y: hidden;
 }
 
-.btn-modal {
+.btn-modal__container {
     padding: 10px 20px;
     display: block;
     margin: 100px auto 0;
     font-size: 18px;
 }
 
-.modal, .overlay {
+.modal__container, .overlay {
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -40,7 +40,7 @@ body.active-modal {
 .overlay {
     background: rgba(49,49,49,0.8);
 }
-.modal-content {
+.modal__content {
     position: absolute;
     top: 40%;
     left: 50%;
