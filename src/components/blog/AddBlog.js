@@ -75,6 +75,7 @@ return (
                 </div>
                 <fieldset>
                     <div className="form__group">
+                        <div className="blog-body">
                         <label htmlFor="description">Body:</label>
                         <input
                             required autoFocus
@@ -89,7 +90,7 @@ return (
                                     setBlog(copy)
                                 }
                             } />
-                    </div>
+                    </div></div>
                 </fieldset>
                 <div className="form__group">
                     <select

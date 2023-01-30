@@ -22,7 +22,6 @@ export const Blogs = ({ searchTermState, blogs }) => {
         <div>
             <div className="blogs-panel">
                 <article className="blogs" >
-                    <header className="blogs-title">Blogs</header>
                     <button className="save-blog" onClick={toggleModal}>Add a Blog</button>
                     <div className="blogs-block">
                         {blogs.map(
@@ -31,8 +30,10 @@ export const Blogs = ({ searchTermState, blogs }) => {
                                     <header className="blogs">
                                         <div className="blog-details">
                                         <div className="title">{blog.title}</div> 
-                                        <div className="blog-post">{blog.post_body}</div>
+                                        <div className="secondRow">
                                         {blog.photo_url ? <img src={blog.photo_url} alt="blog photos" className="blog-img"/> : <div className="no-image"></div>}
+                                        <div className="blog-post">{blog.post_body}</div></div>
+                                        
                                         </div>
                                         </header>
                                 </section>

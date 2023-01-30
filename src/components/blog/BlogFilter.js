@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 
+
 export const BlogFilter = ({ searchSetterFunction, blogs, blogSetterFunction, searchTerm }) => {
     const [parks, setParks] = useState([])
     const [park_id, setPark_id] = useState(0)
