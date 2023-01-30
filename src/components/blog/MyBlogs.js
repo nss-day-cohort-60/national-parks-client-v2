@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Blogs.css";
+import { EditBlog } from "./EditBlog";
 
 export const MyBlogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [user, setUser] = useState({})
+  const [editModal, setEditModal] = useState(false)
+  const [editId, setEditId] = useState(0)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -21,9 +24,13 @@ export const MyBlogs = () => {
     }
   }, []);
 
+  const toggleEditModal = () => {
+    setEditModal(!editModal)
+  }
+
   const deleteBlog = (id) => {
-           const confirmed = window.confirm(
-            "Are you sure you want to delete this blog?"
+          const confirmed = window.confirm(
+             "Are you sure you want to delete this blog?"
         )
         if (!confirmed) return
         fetch(`http://localhost:8088/blogs/${id}`, {
@@ -60,12 +67,7 @@ export const MyBlogs = () => {
                 </div>
               </header>
               <div>
-                <button
-                  className="edit-button"
-                  onClick={() => {
-                    navigate(`/edit-blog/${user.id}/${blog.id}`);
-                  }}
-                >
+              <button className="edit-blog" id={blog.id} onClick={e => {return [setEditId(blog.id), toggleEditModal()]}}>
                   Edit Blog
                 </button>
                 <button className="delete-button" onClick={()=>{
@@ -76,6 +78,7 @@ export const MyBlogs = () => {
           );
         })}
       </div>
+      {editModal && <EditBlog setEditModal={setEditModal} id={editId} />}
     </>
   );
 };

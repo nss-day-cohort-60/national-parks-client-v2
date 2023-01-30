@@ -18,18 +18,18 @@
     justify-content: center;
 }
 
-body.active-modal__container {
+body.active-blogModal, body.active-editModal {
     overflow-y: hidden;
 }
 
-.btn-modal__container {
+.btn-blogModal, .btn-editModal {
     padding: 10px 20px;
     display: block;
     margin: 100px auto 0;
     font-size: 18px;
 }
 
-.modal__container, .overlay {
+.blogModal, .editModal, .overlay {
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -42,7 +42,7 @@ body.active-modal__container {
 .overlay {
     background: rgba(49,49,49,0.8);
 }
-.modal__content {
+.blogModal-content, .editModal-content{
     position: absolute;
     top: 40%;
     left: 50%;
@@ -55,7 +55,7 @@ body.active-modal__container {
     min-width: 500px;
 }
 
-.close-modal {
+.close-blogModal, .close-editModal{
     position: absolute;
     top: 10px;
     right: 10px;

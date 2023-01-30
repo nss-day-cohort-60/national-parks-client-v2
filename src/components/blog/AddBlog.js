@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import "./Blogs.css"
-export const AddBlog = ({ setModal, Date }) => {
+export const AddBlog = ({ setBlogModal, Date }) => {
 
 const localUser = localStorage.getItem("np_user")
 const userObject = JSON.parse(localUser)
@@ -40,7 +40,7 @@ const handleSaveButtonClick = (click) => {
     })
         .then(response => response.json())
         .then(() => {
-            setModal(false)
+            setBlogModal(false)
                 })
             .catch(error => console.log(error))
 
@@ -51,10 +51,10 @@ return (
     <>
     
         <form className="AddBlogForm">
-        <div className="modal__container">
+        <div className="blogModal">
                     <div className="overlay">
                         {/* figure out how to route the boulder that the button was selected from and render the name, while holding the id */}
-                        <div className="modal__content">
+                        <div className="blogModal-content">
             <h2 className="BlogForm__title">Submit a Blog Post</h2>
             <fieldset>
                 <div className="form__group">
@@ -112,8 +112,8 @@ return (
                 </div>
             </fieldset>
 
-            <div className="form__group">
-                <button className="close-modal" type="button" onClick={(e) => setModal(false)}>Cancel</button>
+            <div className="form-group">
+                <button className=".close-blogModal" type="button" onClick={(e) => setBlogModal(false)}>Cancel</button>
                 <button className="save-blog" onClick={handleSaveButtonClick}>Save</button>
             </div>
             </div>
