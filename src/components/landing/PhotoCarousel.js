@@ -98,7 +98,7 @@ export const PhotoCarousel = ({resource}) => {
     }
 
     const verifyPath = () => {
-        if(document.URL==="http://localhost:3000/home"){
+        if(document.URL==="http://localhost:3000/home" || document.URL==="http://localhost:3000/"){
             return LandingCarousel()
         } else if(document.URL.includes('http://localhost:3000/parks')){
             return Carousel()
