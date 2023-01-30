@@ -58,3 +58,22 @@
 #wildlife, #amenities, #campgrounds{
     width: 700px;
 }
+
+#blog--container{
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.park--blogs{
+    display: flex;
+    flex-direction: column;
+}
+
+.park--blogs div{
+    display:flex;
+    object-fit:contain;
+}
+
+.park--blogs p{
+    padding-left: 8px;
+}
