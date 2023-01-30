@@ -1,6 +1,33 @@
 *, *::before, *::after{
     box-sizing: border-box;
 }
+.title--main{
+    z-index: 1;
+}
+#landing--top {
+    background-color: rgba(0, 0, 0, .1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#landing--top::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: 745px;
+    background-color: rgba(234, 242, 215,0.25);
+}
+
+.parkslist--container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
 .carousel {
     width: 700px;
@@ -66,4 +93,30 @@
 
 .carousel--button.next {
     right: 1rem;
+}
+
+span::before{
+    content: '';
+    animation: animate infinite 15s;
+}
+
+@keyframes animate{
+    0%{
+        content: 'The Outdoors';
+    }
+    20%{
+        content: 'Wildlife';
+    }
+    40%{
+        content: 'Amenities';
+    }
+    60%{
+        content: 'Nature';
+    }
+    80%{
+        content: 'Camping';
+    }
+    100%{
+        content: 'National Parks';
+    }
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import "./parks.css"
 
 
 export const Park = ({ park }) => {
@@ -19,7 +20,7 @@ export const Park = ({ park }) => {
 
     return <>
         <section className="park" key={`park--${park.id}`}>
-            <div className="park--name"><Link to={`/parks/${park.id}`}>{park.name}</Link></div>
+            <div className="park--name"><Link to={`/parks/${park.id}`} className="link_styles"><h5>{park.name}</h5></Link></div>
             <img className="park--photo"src={photo} alt="National Park"/>
         </section>
         </>
