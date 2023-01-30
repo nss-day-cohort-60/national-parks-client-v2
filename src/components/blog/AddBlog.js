@@ -51,18 +51,18 @@ return (
     <>
     
         <form className="AddBlogForm">
-        <div className="modal">
+        <div className="modal__container">
                     <div className="overlay">
                         {/* figure out how to route the boulder that the button was selected from and render the name, while holding the id */}
-                        <div className="modal-content">
+                        <div className="modal__content">
             <h2 className="BlogForm__title">Submit a Blog Post</h2>
             <fieldset>
-                <div className="form-group">
+                <div className="form__group">
                     <label htmlFor="description">Title:</label>
                     <input
                         required autoFocus
                         type="text"
-                        className="form-control"
+                        className="form__control"
                         placeholder="Title"
                         value={blog.title}
                         onChange={
@@ -74,12 +74,12 @@ return (
                         } />
                 </div>
                 <fieldset>
-                    <div className="form-group">
+                    <div className="form__group">
                         <label htmlFor="description">Body:</label>
                         <input
                             required autoFocus
                             type="text"
-                            className="form-control"
+                            className="form__control"
                             placeholder="Write your blog here"
                             value={blog.post_body}
                             onChange={
@@ -91,7 +91,7 @@ return (
                             } />
                     </div>
                 </fieldset>
-                <div className="form-group">
+                <div className="form__group">
                     <select
                         onChange={(event) => {
                             const copy = { ...blog }
@@ -111,8 +111,8 @@ return (
                 </div>
             </fieldset>
 
-            <div className="form-group">
-                <button className=".close-modal" type="button" onClick={(e) => setModal(false)}>Cancel</button>
+            <div className="form__group">
+                <button className="close-modal" type="button" onClick={(e) => setModal(false)}>Cancel</button>
                 <button className="save-blog" onClick={handleSaveButtonClick}>Save</button>
             </div>
             </div>
