@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,8 +8,9 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
+
   const handleLogin = () => {
-    handleClose()
+    handleClose();
     return fetch(`http://localhost:8088/users?email=${email}`)
       .then((res) => res.json())
       .then((foundUsers) => {
@@ -30,10 +31,14 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
         }
       });
   };
+  const handleExit = () => {
+      setEmail('')
+  }
+
 
   return (
     <>
-      <Modal className="modal__container" show={show} onHide={handleClose} centered>
+      <Modal className="modal__container" show={show} onHide={handleClose} onExit={handleExit}centered>
         <Modal.Header closeButton>
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
