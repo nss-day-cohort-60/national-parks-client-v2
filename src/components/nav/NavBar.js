@@ -38,7 +38,7 @@ export const NavBar = () => {
             {localStorage.getItem("np_user") ? (
               <>
                 <li className="navbar__item navbar__logout">
-                  <Link className="navbar__link" to="">
+                  <Link className="navbar__link" to="my-blogs">
                     My Blogs
                   </Link>
                 </li>

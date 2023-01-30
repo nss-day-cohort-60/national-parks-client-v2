@@ -57,12 +57,12 @@ return (
                         <div className="blogModal-content">
             <h2 className="BlogForm__title">Submit a Blog Post</h2>
             <fieldset>
-                <div className="form-group">
+                <div className="form__group">
                     <label htmlFor="description">Title:</label>
                     <input
                         required autoFocus
                         type="text"
-                        className="form-control"
+                        className="form__control"
                         placeholder="Title"
                         value={blog.title}
                         onChange={
@@ -74,12 +74,12 @@ return (
                         } />
                 </div>
                 <fieldset>
-                    <div className="form-group">
+                    <div className="form__group">
                         <label htmlFor="description">Body:</label>
                         <input
                             required autoFocus
                             type="text"
-                            className="form-control"
+                            className="form__control"
                             placeholder="Write your blog here"
                             value={blog.post_body}
                             onChange={
@@ -91,7 +91,7 @@ return (
                             } />
                     </div>
                 </fieldset>
-                <div className="form-group">
+                <div className="form__group">
                     <select
                         onChange={(event) => {
                             const copy = { ...blog }
