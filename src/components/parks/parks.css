@@ -20,9 +20,11 @@
 
 .park--photo {
     object-fit: cover;
-    width: 100%;
-    height: 100%;
+    object-position: 25% 25%; 
+    width: 25rem;
+    height: 25rem;
     border-radius: 0.5rem;
+    overflow: hidden;
 }
 
 .park-page--container{
@@ -42,6 +44,15 @@
     height: 200px;
     object-fit: cover;
     object-position: 25% 25%; 
+}
+
+.link_styles {
+    text-decoration: none;
+    color: black;
+}
+
+.link_styles:hover{
+    color: green;
 }
 
 #wildlife, #amenities, #campgrounds{

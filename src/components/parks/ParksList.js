@@ -19,7 +19,7 @@ export const ParkList = () => {
 
     return <>
         
-        <h2>National Parks</h2>
+        <div className="parkslist--container">
 
         <article className="parks">
             {
@@ -27,6 +27,7 @@ export const ParkList = () => {
                     (park) => <Park park={park} />)
             }
         </article>
+        </div>
     </>
 
 }
