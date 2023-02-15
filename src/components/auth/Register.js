@@ -11,8 +11,9 @@ export const Register = (props) => {
     })
     let navigate = useNavigate()
 
-    const registerNewUser = () => {
-        return fetch("http://localhost:8088/users", {
+    const registerNewUser = (e) => {
+        e.preventDefault()
+        return fetch("http://localhost:8000/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -23,31 +24,16 @@ export const Register = (props) => {
             .then(createdUser => {
                 if (createdUser.hasOwnProperty("id")) {
                     localStorage.setItem(
-                      "np_user",
+                      "np_token",
                       JSON.stringify({
                         id: createdUser.id,
                         name: createdUser.first_name,
-                        staff: createdUser.isRanger,
+                        staff: createdUser.is_staff,
+                        token: createdUser.token
                       })
                     );
                     navigate("/")
                     window.location.reload(false);
-                }
-            })
-    }
-
-    const handleRegister = (e) => {
-        e.preventDefault()
-        return fetch(`http://localhost:8088/users?email=${user.email}`)
-            .then(res => res.json())
-            .then(response => {
-                if (response.length > 0) {
-                    // Duplicate email. No good.
-                    window.alert("Account with that email address already exists")
-                }
-                else {
-                    // Good email, create user.
-                    registerNewUser()
                 }
             })
     }
@@ -60,7 +46,7 @@ export const Register = (props) => {
 
     return (
         <main style={{ textAlign: "center" }}>
-            <form className="form--login" onSubmit={handleRegister}>
+            <form className="form--login" onSubmit={registerNewUser}>
                 <h1 className="h3 mb-3 font-weight-normal">Please Register to Explore National Parks</h1>
                 <fieldset>
                     <label htmlFor="firstName"> First Name </label>

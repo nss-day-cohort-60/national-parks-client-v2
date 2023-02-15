@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import "./Blogs.css"
 export const AddBlog = ({ setBlogModal, Date }) => {
 
-const localUser = localStorage.getItem("np_user")
+const localUser = localStorage.getItem("np_token")
 const userObject = JSON.parse(localUser)
 const [parks, setParks] = useState([])
 
@@ -17,7 +17,7 @@ const [blog, setBlog] = useState({
 
 useEffect(
     () => {
-        fetch(`http://localhost:8088/parks`)
+        fetch(`http://localhost:8000/parks`)
         .then( res => res.json() )
         .then( (allParks) => {
             setParks(allParks)
@@ -31,7 +31,7 @@ const handleSaveButtonClick = (click) => {
         ...blog,
     }
 
-    fetch(`http://localhost:8088/blogs`, {
+    fetch(`http://localhost:8000/blogs`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

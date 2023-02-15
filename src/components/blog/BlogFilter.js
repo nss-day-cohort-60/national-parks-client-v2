@@ -6,13 +6,13 @@ export const BlogFilter = ({ searchSetterFunction, blogs, blogSetterFunction, se
     const [park_id, setPark_id] = useState(0)
 
     const parkList = () => {
-        return fetch(`http://localhost:8088/parks`)
+        return fetch(`http://localhost:8000/parks`)
             .then(res => res.json())
             .then(data => setParks(data))
     }
 
     const getAllBlogs = () => {
-        return fetch(`http://localhost:8088/blogs`)
+        return fetch(`http://localhost:8000/blogs`)
             .then(res => res.json())
             .then(data => blogSetterFunction(data))
     }
@@ -28,19 +28,19 @@ export const BlogFilter = ({ searchSetterFunction, blogs, blogSetterFunction, se
     }, [parks, blogs])
 
     const filteredBlogFetcher = (park_id) => {
-        return fetch(`http://localhost:8088/blogs?park_id=${park_id}`)
+        return fetch(`http://localhost:8000/blogs?park_id=${park_id}`)
             .then(res => res.json())
             .then(data => blogSetterFunction(data))
     }
 
     const blogSearchAndFilterFetcher = (park_id, searchTerm) => {
-        return fetch(`http://localhost:8088/blogs?park_id=${park_id}&key_word=${searchTerm}`)
+        return fetch(`http://localhost:8000/blogs?park_id=${park_id}&key_word=${searchTerm}`)
             .then(res => res.json())
             .then(data => blogSetterFunction(data))
     }
 
     const blogSearchFetcher = (searchTerm) => {
-        return fetch(`http://localhost:8088/blogs?key_word=${searchTerm}`)
+        return fetch(`http://localhost:8000/blogs?key_word=${searchTerm}`)
             .then(res => res.json())
             .then(data => blogSetterFunction(data))
     }

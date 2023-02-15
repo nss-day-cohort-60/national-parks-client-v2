@@ -11,11 +11,11 @@ export const MyBlogs = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const user = localStorage.getItem("np_user");
+    const user = localStorage.getItem("np_token");
     if (user) {
       const parsedUser = JSON.parse(user);
       setUser(parsedUser)
-      fetch(`http://localhost:8088/blogs?user_id=${parsedUser.id}`)
+      fetch(`http://localhost:8000/blogs?user_id=${parsedUser.id}`)
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
@@ -33,7 +33,7 @@ export const MyBlogs = () => {
              "Are you sure you want to delete this blog?"
         )
         if (!confirmed) return
-        fetch(`http://localhost:8088/blogs/${id}`, {
+        fetch(`http://localhost:8000/blogs/${id}`, {
             method: "DELETE",
         }).then(() => {
             navigate(0) //refreshes the page
