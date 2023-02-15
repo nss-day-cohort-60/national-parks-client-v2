@@ -11,21 +11,23 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
 
   const handleLogin = () => {
     handleClose();
-    return fetch(`http://localhost:8088/users?email=${email}`)
-      .then((res) => res.json())
-      .then((foundUsers) => {
-        if (foundUsers.hasOwnProperty("id")) {
-          const user = foundUsers;
-          localStorage.setItem(
-            "np_user",
-            JSON.stringify({
-              id: user.id,
-              name: user.first_name,
-              staff: user.isRanger,
-            })
-          );
-        setLoggedIn(true);
-         navigate("/home");
+    fetch(`http://localhost:8000/login`, {
+            method: "POST",
+            body: JSON.stringify({ email }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(res => res.json())
+            .then(authInfo => {
+                if (authInfo.valid) {
+                    localStorage.setItem("np_token", JSON.stringify({
+                      id: authInfo.id,
+                      name: authInfo.first_name,
+                      staff: authInfo.is_staff,
+                      token: authInfo.token
+                    }))
+                    navigate("/home")
         } else {
           window.alert("Invalid login");
         }

@@ -14,7 +14,7 @@ export const ParkPage = () => {
   const [blogs, setBlogs] = useState([])
 
   useEffect(() => {
-    fetch(`http://localhost:8088/parks/${park_id}`)
+    fetch(`http://localhost:8000/parks/${park_id}`)
       .then((response) => response.json())
       .then((parkObject) => {
         setPark(parkObject);
@@ -22,7 +22,7 @@ export const ParkPage = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:8088/photos?park_id=${park_id}`)
+    fetch(`http://localhost:8000/photos?park_id=${park_id}`)
       .then((response) => response.json())
       .then((parkPhotoArray) => {
         setParkPhotos(parkPhotoArray);
@@ -30,7 +30,7 @@ export const ParkPage = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:8088/wildlife?park_id=${park_id}`)
+    fetch(`http://localhost:8000/wildlife?park_id=${park_id}`)
       .then((response) => response.json())
       .then((wildlifeArray) => {
         setWildlife(wildlifeArray);
@@ -38,7 +38,7 @@ export const ParkPage = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:8088/campgrounds?park_id=${park_id}`)
+    fetch(`http://localhost:8000/campgrounds?park_id=${park_id}`)
       .then((response) => response.json())
       .then((data) => {
         setCampgrounds(data);
@@ -46,7 +46,7 @@ export const ParkPage = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:8088/park_amenities?park_id=${park_id}`)
+    fetch(`http://localhost:8000/park_amenities?park_id=${park_id}`)
       .then((response) => response.json())
       .then((data) => {
         setAmenities(data);
@@ -54,7 +54,7 @@ export const ParkPage = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:8088/natural_attractions?park_id=${park_id}`)
+    fetch(`http://localhost:8000/natural_attractions?park_id=${park_id}`)
       .then((response) => response.json())
       .then((data) => {
         setNaturalAttractions(data);
@@ -62,7 +62,7 @@ export const ParkPage = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:8088/blogs?park_id=${park_id}`)
+    fetch(`http://localhost:8000/blogs?park_id=${park_id}`)
       .then((response) => response.json())
       .then((data) => {
         setBlogs(data);

@@ -7,7 +7,7 @@ export const Landing = () => {
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/photos`)
+            fetch(`http://localhost:8000/photos`)
                 .then(response => response.json())
                 .then((data) => {
                     setPhotos(data)

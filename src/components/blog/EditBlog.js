@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import "./Blogs.css"
 export const EditBlog = ({ setEditModal, id }) => {
 
-    const localUser = localStorage.getItem("np_user")
+    const localUser = localStorage.getItem("np_token")
     const userObject = JSON.parse(localUser)
     const [parks, setParks] = useState([])
 
@@ -18,12 +18,12 @@ export const EditBlog = ({ setEditModal, id }) => {
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/parks`)
+            fetch(`http://localhost:8000/parks`)
                 .then(res => res.json())
                 .then((allParks) => {
                     setParks(allParks)
                 })
-            fetch(`http://localhost:8088/blogs/${id}`)
+            fetch(`http://localhost:8000/blogs/${id}`)
                 .then(res => res.json())
                 .then((foundBlog) => {
                     setBlog(foundBlog)
@@ -37,7 +37,7 @@ export const EditBlog = ({ setEditModal, id }) => {
             ...blog,
         }
 
-        fetch(`http://localhost:8088/blogs/${id}`, {
+        fetch(`http://localhost:8000/blogs/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

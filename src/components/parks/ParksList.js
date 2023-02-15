@@ -8,7 +8,7 @@ export const ParkList = () => {
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/parks`)
+            fetch(`http://localhost:8000/parks`)
             .then( res => res.json() )
             .then( (parksArray) => {
                 setParks(parksArray)

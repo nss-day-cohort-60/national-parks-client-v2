@@ -13,7 +13,7 @@ export const NavBar = () => {
 
 
       useEffect(() => {
-          const user = localStorage.getItem("np_user");
+          const user = localStorage.getItem("np_token");
           if (user) {
             console.log(user)
             setName(JSON.parse(user).name);
@@ -35,7 +35,7 @@ export const NavBar = () => {
                 Blogs
               </Link>
             </li>
-            {localStorage.getItem("np_user") ? (
+            {localStorage.getItem("np_token") ? (
               <>
                 <li className="navbar__item navbar__logout">
                   <Link className="navbar__link" to="my-blogs">
@@ -54,7 +54,7 @@ export const NavBar = () => {
                       ) {
                         setLoggedIn(false);
                         setName("");
-                        localStorage.removeItem("np_user");
+                        localStorage.removeItem("np_token");
                         navigate("/", { replace: true });
                       }
                     }}
