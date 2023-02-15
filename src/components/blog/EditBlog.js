@@ -45,6 +45,7 @@ export const EditBlog = ({ setEditModal, id }) => {
             body: JSON.stringify(blogToSendToAPI)
         })
             .then(() => {
+                window.location.reload()
                 setEditModal(false)
             })
             .catch(error => console.log(error))
@@ -94,17 +95,17 @@ export const EditBlog = ({ setEditModal, id }) => {
                                     </div>
                                 </fieldset>
                                 <div className="form-group">
-                                    <select defaultValue={blog.park_id}
+                                    <select defaultValue={blog.park?.id} value={blog.park?.id}
                                         onChange={(event) => {
                                             const copy = { ...blog }
-                                            copy.park_id = parseInt(event.target.value)
+                                            copy.park.id = parseInt(event.target.value)
                                             setBlog(copy)
                                         }}
                                     >
                                         <option value="" disabled>Select a park</option>
                                         {parks.map((park) => {
                                             return (
-                                                <option selected={park.id == blog.park_id ? true : false} key={park.id} value={park.id}>
+                                                <option key={park.id} value={park.id}>
                                                     {park.name}
                                                 </option>
                                             )

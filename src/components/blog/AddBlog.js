@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { fetchIt } from "../auth/fetchIt"
 import "./Blogs.css"
 export const AddBlog = ({ setBlogModal, Date }) => {
 
@@ -31,15 +32,12 @@ const handleSaveButtonClick = (click) => {
         ...blog,
     }
 
-    fetch(`http://localhost:8000/blogs`, {
+    fetchIt(`http://localhost:8000/blogs`, {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
         body: JSON.stringify(blogToSendToAPI)
     })
-        .then(response => response.json())
         .then(() => {
+            window.location.reload()
             setBlogModal(false)
                 })
             .catch(error => console.log(error))
