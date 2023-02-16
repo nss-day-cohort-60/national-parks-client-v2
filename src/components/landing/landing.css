@@ -95,6 +95,72 @@
     right: 1rem;
 }
 
+.fav--carousel {
+    width: 750px;
+    height: 200px;
+    position: relative;
+}
+
+.fav--carousel > ul {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+}
+
+.fav--carousel--slide > img {
+    width: 750px;
+    height: 350px;
+    object-fit: cover;
+    object-position: center; 
+}
+
+.fav--carousel--slide{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
+}
+
+.fav--carousel--slide[data-active]{
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+}
+
+.fav--carousel--button{
+    background: none;
+    position: absolute;
+    border: none;
+    font-size: 4rem;
+    top: 75%;
+    z-index: 2;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, .5);
+    cursor: pointer;
+    border-radius: 0.5rem;
+    padding: 0 .5rem;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.fav--carousel--button:hover,
+.fav--carousel--button:focus {
+    color: white;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.fav--carousel--button:focus{
+    outline: 1px solid black;
+}
+
+.fav--carousel--button.prev {
+    left: 1rem;
+}
+
+.fav--carousel--button.next {
+    left: 40rem;
+}
+
 #taglines::before{
     content: '';
     animation: animate infinite 15s;

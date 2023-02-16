@@ -4,6 +4,7 @@ import { PhotoCarousel } from "../landing/PhotoCarousel";
 import "./parks.css";
 import { fetchIt } from "../auth/fetchIt";
 
+import { FavoriteBtn } from "../favorites/favoriteBtn";
 
 export const ParkPage = () => {
   const { park_id } = useParams();
@@ -106,8 +107,8 @@ export const ParkPage = () => {
           <p>
             {park.latitude},{park.longitude}
           </p>
-          <h1></h1>
-        </section><h1>Blogs about {park.name}</h1>
+          <FavoriteBtn />
+        </section><h1 className="park-page--title"><b>Blogs about {park.name}</b></h1>
         <div className="park--blogs" id="blog--container">
           
           {blogs.map((blog) => {
@@ -116,25 +117,26 @@ export const ParkPage = () => {
                 <h2>{blog.title}</h2>
                 <h6>{blog.date_created}</h6>
                 <div>
-                {blog.photo?.url !== null? <img src={blog.photo?.url} className="park-page--sect-photo" />: ""}
+                {blog?.photo !== null? <img src={blog?.photo?.url} className="park-page--sect-photo" />: ""}
                 <p className="park--blog" >{blog.post_body}</p>
                 </div>
               </>
             );
           })}
         </div>
-        <div>
-          <h1>Wildlife at {park.name}</h1>
+        <div className="park--blogs">
+          <h1 className="park-page--title"><b>Wildlife at {park.name}</b></h1>
           {wildlife.map((animal) => {
             return (
               <>
-                <h2>{animal.name}</h2>
+                <h2>{animal.name}</h2><div>
                 <img src={animal.image} className="park-page--sect-photo" />
-                <p>{animal.information}</p>
+                <p className="park--blog">{animal.information}</p>
+                </div>
               </>
             );
-          })}
-          <h1>Campgrounds at {park.name}</h1>
+          })}</div><div>
+          <h1 className="park-page--title"><b>Campgrounds at {park.name}</b></h1>
           {campgrounds.map((camp) => {
             return (
               <>
@@ -145,10 +147,10 @@ export const ParkPage = () => {
               </>
             );
           })}
-          <h1>Amenities at {park.name}</h1>
+          <h1 className="park-page--title"><b>Amenities at {park.name}</b></h1>
           {Amenity()}
 
-          <h1>Natural Attractions at {park.name}</h1>
+          <h1 className="park-page--title"><b>Natural Attractions at {park.name}</b></h1>
 
           {naturalAttractions.map((attraction) => {
             return (
