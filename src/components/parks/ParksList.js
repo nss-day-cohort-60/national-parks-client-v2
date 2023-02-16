@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Park } from "./Park"
 import "./parks.css" 
+import { getParks } from "../utilities/ParkManager"
 
 
 export const ParkList = () => {
@@ -8,11 +9,10 @@ export const ParkList = () => {
 
     useEffect(
         () => {
-            fetch(`http://localhost:8000/parks`)
-            .then( res => res.json() )
+            getParks()
             .then( (parksArray) => {
                 setParks(parksArray)
-            })  
+            }) 
         },
         []
     )
