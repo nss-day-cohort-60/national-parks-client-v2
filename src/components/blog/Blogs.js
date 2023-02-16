@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import "./Blogs.css"
 import { AddBlog } from "./AddBlog"
 import { EditBlog } from "./EditBlog"
+import { FavoriteBtn } from "../favorites/favoriteBtn"
 
 
 export const Blogs = ({ searchTermState, blogs }) => {
@@ -24,7 +25,6 @@ export const Blogs = ({ searchTermState, blogs }) => {
         <div>
             <div className="blogs-panel">
                 <article className="blogs" >
-                    <header className="blogs-title">Blogs</header>
                     <button className="save-blog" onClick={toggleBlogModal}>Add a Blog</button>
                     <div className="blogs-block">
                         {blogs.map(
@@ -32,12 +32,12 @@ export const Blogs = ({ searchTermState, blogs }) => {
                                 return <section className="blog" key={`blog--${blog.id}`} id={`${blog.id}`}>
                                     <header className="blogs">
                                         <div className="blog-details">
-                                        <div className="title">{blog.title}</div> 
+                                        <div className="title"><h3>{blog.title}</h3></div> 
                                         <div className="secondRow">
-                                        {blog.photo_url ? <img src={blog.photo_url} alt="blog photos" className="blog-img"/> : <div className="no-image"></div>}
-                                        <div className="blog-post">{blog.post_body}</div></div>
+                                        {blog.photo?.url ? <img src={blog.photo?.url} alt="blog photos" className="blog-img"/> : <div className="no-image"></div>}
+                                        <div className="blog-post"><p>{blog.post_body}</p></div></div>
                                         
-                                        </div>
+                                        </div><><FavoriteBtn /></>
                                         </header>
                                 </section>
                             }

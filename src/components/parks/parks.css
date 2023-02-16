@@ -27,16 +27,16 @@
     overflow: hidden;
 }
 
-.park-page--container{
-    height: 100vh;
-    padding: 50px;
-}
-
 #park-page--info{
     position: absolute;
     width: 700px;
     left: 50%;
     top: 7.5%;
+    padding: 50px;
+}
+.park-page--container{
+    padding: 50px;
+    overflow-x: hidden;
 }
 
 .park-page--sect-photo{
@@ -44,6 +44,12 @@
     height: 200px;
     object-fit: cover;
     object-position: 25% 25%; 
+}
+
+.park-page--title{
+    position: relative;
+    left: 30%;
+    margin-top: 20px;
 }
 
 .link_styles {
