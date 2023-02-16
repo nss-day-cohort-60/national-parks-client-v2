@@ -45,7 +45,7 @@ export const PhotoCarousel = ({resource}) => {
     const LandingCarousel = () => {
     return <>
     <div id="landing--top">
-    <h1 className="title--main">Park Explorer: Discover <span></span></h1>
+    <h1 className="title--main">Park Explorer: Discover <span id="taglines"></span></h1>
     <div className="carousel">
         <button className="carousel--button prev" onClick={() => prevButtonPressed(true)} >&#171;</button>
         <button className="carousel--button next" onClick={() => nextButtonPressed(true)}>&#187;</button>
