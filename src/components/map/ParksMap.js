@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { getParks } from "../utilities/ParkManager"
+import { Link } from 'react-router-dom'
 
 export const ParksMap = () => {
     const [parks, setParks] = useState([])
@@ -26,7 +27,7 @@ export const ParksMap = () => {
                     return <Marker position={[park.latitude, park.longitude]} key={park.id}>
                         <Popup>
                             <div style={{textAlign: 'center'}}>
-                                <div>{park.name}</div>
+                                <div><Link to={`/parks/${park.id}`} className="link_styles"><h5>{park.name}</h5></Link></div>
                                 <div style={{fontStyle: 'italic'}}>{park.city}, {park.state}</div>
                             </div>
                         </Popup>

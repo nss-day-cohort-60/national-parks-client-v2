@@ -1,7 +1,6 @@
 import { PhotoCarousel } from "./PhotoCarousel"
-import { ParkList } from "../parks/ParksList"
 import { useState, useEffect } from "react"
-import { ParksMap } from "../map/ParksMap"
+import { DisplayParks } from "./DisplayParks"
 
 export const Landing = () => {
     const [photos, setPhotos] = useState([])
@@ -19,8 +18,7 @@ export const Landing = () => {
 
     return <>
         <PhotoCarousel resource={photos} />
-        <ParksMap />
-        <ParkList />
+        <DisplayParks />
     </>
 }
 
