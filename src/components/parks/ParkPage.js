@@ -108,7 +108,7 @@ export const ParkPage = () => {
             {park.latitude},{park.longitude}
           </p>
           <FavoriteBtn />
-        </section><h1 className="park-page--title">Blogs about {park.name}</h1>
+        </section><h1 className="park-page--title"><b>Blogs about {park.name}</b></h1>
         <div className="park--blogs" id="blog--container">
           
           {blogs.map((blog) => {
@@ -125,7 +125,7 @@ export const ParkPage = () => {
           })}
         </div>
         <div className="park--blogs">
-          <h1 className="park-page--title">Wildlife at {park.name}</h1>
+          <h1 className="park-page--title"><b>Wildlife at {park.name}</b></h1>
           {wildlife.map((animal) => {
             return (
               <>
@@ -136,7 +136,7 @@ export const ParkPage = () => {
               </>
             );
           })}</div><div>
-          <h1 className="park-page--title">Campgrounds at {park.name}</h1>
+          <h1 className="park-page--title"><b>Campgrounds at {park.name}</b></h1>
           {campgrounds.map((camp) => {
             return (
               <>
@@ -147,10 +147,10 @@ export const ParkPage = () => {
               </>
             );
           })}
-          <h1 className="park-page--title">Amenities at {park.name}</h1>
+          <h1 className="park-page--title"><b>Amenities at {park.name}</b></h1>
           {Amenity()}
 
-          <h1 className="park-page--title">Natural Attractions at {park.name}</h1>
+          <h1 className="park-page--title"><b>Natural Attractions at {park.name}</b></h1>
 
           {naturalAttractions.map((attraction) => {
             return (

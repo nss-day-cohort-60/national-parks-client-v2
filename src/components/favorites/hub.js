@@ -58,12 +58,12 @@ export const UserHub = () => {
       return <>
             <div className="hub--container">
                 <h1 className="hub--title"> YOUR FAVORITES HUB </h1>
-                <div className="hub--events"><h3>Events</h3>
+                <div className="hub--events"><h3><b>Events</b></h3>
                 {
                     findFavorites(events)
                 }
                 </div>
-                <div className="hub--blogs"><h3>Blogs</h3>
+                <div className="hub--blogs"><h3><b>Blogs</b></h3>
                 {
                     findFavorites(blogs)
                 }
@@ -74,10 +74,10 @@ export const UserHub = () => {
                 testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
                 </p>
                 </div>
-                <div className="hub--photos"><h3>Photos</h3>
+                <div className="hub--photos"><h3><b>Photos</b></h3>
                     <PhotoCarousel resource={photos} />
                 </div>
-                <div className="hub--parks"><h3>Parks</h3>
+                <div className="hub--parks"><h3><b>Parks</b></h3>
                 {
                     findFavorites(parks)
                 }
