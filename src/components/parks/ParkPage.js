@@ -114,7 +114,7 @@ export const ParkPage = () => {
                 <h2>{blog.title}</h2>
                 <h6>{blog.date_created}</h6>
                 <div>
-                {blog.photo_url !== null? <img src={blog.photo_url} className="park-page--sect-photo" />: ""}
+                {blog.photo?.url !== null? <img src={blog.photo?.url} className="park-page--sect-photo" />: ""}
                 <p className="park--blog" >{blog.post_body}</p>
                 </div>
               </>
