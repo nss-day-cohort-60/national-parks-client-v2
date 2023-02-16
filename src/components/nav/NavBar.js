@@ -27,19 +27,24 @@ export const NavBar = () => {
           <ul>
             <li className="navbar__item active">
               <Link className="navbar__link" to="/home">
-                Home
+                <h5>Home</h5>
               </Link>
             </li>
             <li className="navbar__item active">
               <Link className="navbar__link" to="/blogs">
-                Blogs
+                <h5>Blogs</h5>
               </Link>
             </li>
             {localStorage.getItem("np_token") ? (
               <>
                 <li className="navbar__item navbar__logout">
                   <Link className="navbar__link" to="my-blogs">
-                    My Blogs
+                    <h5>My Blogs</h5>
+                  </Link>
+                </li>
+                <li className="navbar__item navbar__logout">
+                  <Link className="navbar__link" to="hub">
+                    <h5>My Hub</h5>
                   </Link>
                 </li>
                 <li className="navbar__item navbar__logout">
@@ -59,7 +64,7 @@ export const NavBar = () => {
                       }
                     }}
                   >
-                    Logout
+                    <h5>Logout</h5>
                   </Link>
                 </li>
               </>
