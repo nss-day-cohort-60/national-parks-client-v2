@@ -64,7 +64,7 @@ button {
 .hub--events{
   width: 750px;
   position: absolute;
-  max-height: 100px;
+  max-height: 200px;
   overflow: auto;
 }
 .hub--parks{
@@ -72,17 +72,18 @@ button {
   top: 70%;
   left: 50%;
   position: absolute;
-  max-height: 100px;
+  max-height: 200px;
   overflow: auto;
 }
 .hub--blogs{
   width: 750px;
   top: 70%;
   position: absolute;
-  max-height: 100px;
+  max-height: 200px;
   overflow: auto;
 }
 .hub--photos{
+  top: 22%;
   left: 50%;
   position: absolute;
 }
@@ -97,4 +98,61 @@ button {
 .hub--container{
   margin: 50px;
   overflow-x: hidden;
+}
+
+.hub--events::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.hub--events::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.hub--events::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.hub--events::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.hub--blogs::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.hub--blogs::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.hub--blogs::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.hub--blogs::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.hub--parks::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.hub--parks::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.hub--parks::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.hub--parks::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

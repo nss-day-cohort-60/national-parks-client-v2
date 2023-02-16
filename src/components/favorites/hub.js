@@ -49,6 +49,7 @@ export const UserHub = () => {
                      <h5>{fav?.event?.name}</h5>
                      <h5>{fav?.park?.name}</h5>
                      <h5>{fav?.post?.title}</h5>
+                     <p>{fav?.event?.description}</p>
                      </>
                     })
             }</>
@@ -61,13 +62,17 @@ export const UserHub = () => {
                 {
                     findFavorites(events)
                 }
-                <p>testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll </p>
                 </div>
                 <div className="hub--blogs"><h3>Blogs</h3>
                 {
                     findFavorites(blogs)
                 }
-                <p>testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll </p>
+                                <p>testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
+                testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
+                testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
+                testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
+                testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
+                </p>
                 </div>
                 <div className="hub--photos"><h3>Photos</h3>
                     <PhotoCarousel resource={photos} />
@@ -76,7 +81,12 @@ export const UserHub = () => {
                 {
                     findFavorites(parks)
                 }
-                <p>testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll </p>
+                <p>testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
+                testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
+                testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
+                testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
+                testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
+                </p>
                 </div>
             </div>
       </>
