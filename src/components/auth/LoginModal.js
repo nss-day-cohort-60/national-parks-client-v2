@@ -27,6 +27,7 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
                       staff: authInfo.is_staff,
                       token: authInfo.token
                     }))
+                    setLoggedIn(true)
                     navigate("/home")
         } else {
           window.alert("Invalid login");

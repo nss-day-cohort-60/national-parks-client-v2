@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { PhotoCarousel } from "../landing/PhotoCarousel";
 import "./parks.css";
+import { fetchIt } from "../auth/fetchIt";
+
 
 export const ParkPage = () => {
   const { park_id } = useParams();
@@ -46,7 +48,7 @@ export const ParkPage = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/park_amenities?park_id=${park_id}`)
+    fetch(`http://localhost:8000/amenities?park_id=${park_id}`)
       .then((response) => response.json())
       .then((data) => {
         setAmenities(data);
@@ -76,14 +78,14 @@ export const ParkPage = () => {
           <>
             <p>
               {" "}
-              - <b>{amenity.name}</b> || {amenity.type}
+              - <b>{amenity.name}</b> || {amenity.amenity.type}
             </p>
           </>
         );
       } else {
         return (
           <>
-            <p>- {amenity.type}</p>
+            <p>- {amenity.amenity.type}</p>
           </>
         );
       }
