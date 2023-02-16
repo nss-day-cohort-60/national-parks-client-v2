@@ -95,7 +95,7 @@
     right: 1rem;
 }
 
-span::before{
+#taglines::before{
     content: '';
     animation: animate infinite 15s;
 }
@@ -120,3 +120,5 @@ span::before{
         content: 'National Parks';
     }
 }
+
+#map { height: 180px; }
