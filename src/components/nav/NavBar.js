@@ -30,9 +30,15 @@ export const NavBar = () => {
                 Home
               </Link>
             </li>
+
             <li className="navbar__item active">
               <Link className="navbar__link" to="/blogs">
                 Blogs
+              </Link>
+            </li>
+            <li className="navbar__item active">
+              <Link className="navbar__link" to="/calendar">
+                Events
               </Link>
             </li>
             {localStorage.getItem("np_token") ? (
