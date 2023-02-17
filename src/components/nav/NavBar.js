@@ -15,15 +15,14 @@ export const NavBar = () => {
       useEffect(() => {
           const user = localStorage.getItem("np_token");
           if (user) {
-            console.log(user)
             setName(JSON.parse(user).name);
           }
         }, [loggedIn]);
 
     return (
       <>
-        <div className="top_bar">   
-            <img src="/np_logo2.png" className="navbar__logo" />        
+        <div className="top_bar">
+          <img src="/np_logo2.png" className="navbar__logo" />
           <ul>
             <li className="navbar__item active">
               <Link className="navbar__link" to="/home">
@@ -77,7 +76,7 @@ export const NavBar = () => {
             )}
           </ul>
           <div className="welcome">{name ? `Welcome ${name}!` : ""}</div>
-          </div>
+        </div>
         <LoginModal
           show={show}
           handleClose={handleClose}
