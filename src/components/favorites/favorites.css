@@ -52,7 +52,6 @@ button {
 }
 .favorite-btn:active {
   top: 2px;
-
 }
 
 .hub--title{
@@ -67,21 +66,24 @@ button {
   max-height: 200px;
   overflow: auto;
 }
+
 .hub--parks{
   width: 750px;
   top: 70%;
   left: 50%;
   position: absolute;
-  max-height: 200px;
+  max-height: 350px;
   overflow: auto;
 }
+
 .hub--blogs{
   width: 750px;
   top: 70%;
   position: absolute;
-  max-height: 200px;
+  max-height: 350px;
   overflow: auto;
 }
+
 .hub--photos{
   top: 22%;
   left: 50%;
@@ -98,6 +100,25 @@ button {
 .hub--container{
   margin: 50px;
   overflow-x: hidden;
+  justify-content: space-between;
+}
+
+.hub--subcontainer{
+  display: inline-block;
+  flex-wrap: wrap;
+}
+
+.hub--subcontainer h5{
+  width: 100%;
+}
+
+.hub--subcontainer img{
+  float: left;
+  width: 33%;
+}
+.hub--subcontainer p{
+  text-align: justify;
+  padding-right: 10px;
 }
 
 .hub--events::-webkit-scrollbar {

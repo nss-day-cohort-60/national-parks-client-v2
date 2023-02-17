@@ -1,9 +1,17 @@
 .modal__register {
   margin-top: 20px;
-  font-weight: bold;
   margin-bottom: 0;
+  font-weight: bold;
 }
 .modal__email {
   margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+label {
   font-weight: bold;
 }
+.mt-2 {
+  margin: 0;
+}
+
