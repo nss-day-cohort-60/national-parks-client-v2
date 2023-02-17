@@ -42,8 +42,8 @@ export const MyBlogs = () => {
 
   return (
     <>
-      <header className="blogs-title">My Blogs</header>
-      <div className="blogs-block">
+      <header className="blogs-title"><h1>My Blogs</h1></header>
+      <div className="blogs-block" style={{padding:"20px"}}>
         {blogs.map((blog) => {
           return (
             <section
@@ -53,8 +53,8 @@ export const MyBlogs = () => {
             >
               <header className="blogs">
                 <div className="blog-details">
-                  <div className="title">{blog.title}</div>
-                  <div className="blog-post">{blog.post_body}</div>
+                  <div className="title"><h5>{blog.title}</h5></div>
+                  <div className="blog-post"><p>{blog.post_body}</p></div>
                   {blog.photo_url ? (
                     <img
                       src={blog.photo_url}

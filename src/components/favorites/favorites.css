@@ -1,0 +1,179 @@
+button {
+    margin: 20px;
+    outline: none;
+}
+
+.favorite-btn {
+    width: 130px;
+    height:40px;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 25px;
+    background-color: #89d8d3;
+    background-image: linear-gradient(315deg, #89d8d3 0%, #C8ECC8 74%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,0.1);
+    outline: none;
+    border-width: 0px;
+    z-index: 0;
+}
+
+.favorite-btn::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 5px;
+    background-color: #4dccc6;
+    background-image: linear-gradient(315deg, #1a9a5f 0%, #c8ecc8 74%);
+    box-shadow:
+    -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001;
+    transition: all 0.3s ease;
+}
+
+.favorite-btn:hover {
+  color: #fff;
+
+}
+.favorite-btn:hover:after {
+  top: 0;
+  height: 100%;
+
+}
+.favorite-btn:active {
+  top: 2px;
+}
+
+.hub--title{
+  left: 35%;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.hub--events{
+  width: 750px;
+  position: absolute;
+  max-height: 200px;
+  overflow: auto;
+}
+
+.hub--parks{
+  width: 750px;
+  top: 70%;
+  left: 50%;
+  position: absolute;
+  max-height: 350px;
+  overflow: auto;
+}
+
+.hub--blogs{
+  width: 750px;
+  top: 70%;
+  position: absolute;
+  max-height: 350px;
+  overflow: auto;
+}
+
+.hub--photos{
+  top: 22%;
+  left: 50%;
+  position: absolute;
+}
+
+.park-page--sect-photo{
+  width: 350px;
+  height: 200px;
+  object-fit: cover;
+  object-position: 25% 25%; 
+}
+
+.hub--container{
+  margin: 50px;
+  overflow-x: hidden;
+  justify-content: space-between;
+}
+
+.hub--subcontainer{
+  display: inline-block;
+  flex-wrap: wrap;
+}
+
+.hub--subcontainer h5{
+  width: 100%;
+}
+
+.hub--subcontainer img{
+  float: left;
+  width: 33%;
+}
+.hub--subcontainer p{
+  text-align: justify;
+  padding-right: 10px;
+}
+
+.hub--events::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.hub--events::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.hub--events::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.hub--events::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.hub--blogs::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.hub--blogs::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.hub--blogs::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.hub--blogs::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.hub--parks::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.hub--parks::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.hub--parks::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.hub--parks::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
