@@ -19,6 +19,7 @@ const BasicSpinner = ({ show }) => {
 
 export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("")
   const navigate = useNavigate();
   const [registered, setRegistered] = useState(false);
   const [showSpinner, setShowSpinner] = useState(false);
@@ -56,11 +57,13 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
           setLoggedIn(true);
           navigate("/home");
         } else {
+          setShowSpinner(false);
           window.alert("Invalid login");
         }
       });
   };
   const handleExit = () => {
+    setShowSpinner(false);
     setEmail("");
     setRegistered(false);
     setUser({
@@ -69,7 +72,8 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
       email: "",
       password: "",
       isRanger: false,
-    });
+    })
+    setPassword("")
   };
 
   const registerNewUser = (e) => {
@@ -109,7 +113,9 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
     <>
       <form>
         <fieldset>
-          <label htmlFor="inputEmail" className="modal__email">Enter your email address:</label>
+          <label htmlFor="inputEmail" className="modal__email">
+            Enter your email address:
+          </label>
           <input
             type="email"
             value={email}
@@ -122,13 +128,14 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
         </fieldset>
         <fieldset>
           <label htmlFor="password" className="modal__email">
-        Enter your password:</label>
+            Enter your password:
+          </label>
           <input
-            onChange={updateUser}
+            onChange={(evt) => setPassword(evt.target.value)}
             type="password"
             id="password"
             className="form-control"
-            value={user.password}
+            value={password}
             placeholder="Password"
             required
           />
@@ -227,6 +234,8 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
         <Button
           className="mt-2"
           onClick={() => {
+            //functional update to toggle the value of registered
+            //takes the current value of registered and replaces it by its opposite
             setRegistered((x) => !x);
           }}
         >

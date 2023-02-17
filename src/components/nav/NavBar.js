@@ -15,7 +15,6 @@ export const NavBar = () => {
       useEffect(() => {
           const user = localStorage.getItem("np_token");
           if (user) {
-            console.log(user)
             setName(JSON.parse(user).name);
           }
         }, [loggedIn]);

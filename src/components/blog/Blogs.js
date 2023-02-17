@@ -8,14 +8,24 @@ import { FavoriteBtn } from "../favorites/favoriteBtn"
 export const Blogs = ({ searchTermState, blogs }) => {
     const [filteredBlogs, setFiltered] = useState(blogs)
     const [blogModal, setBlogModal] = useState(false)
+    const [loggedIn, setLoggedIn] = useState(false)
 
     useEffect(
         () => {
             setFiltered(blogs)
-            console.log(blogs)
         },
         [ searchTermState, blogs ]
     )
+
+    useEffect(() => {
+        const user = localStorage.getItem("np_token");
+        if (user) {
+            setLoggedIn(true)
+        }
+        else {
+            setLoggedIn(false)
+        }
+    }, [])
 
     const toggleBlogModal = () => {
         setBlogModal(!blogModal)
@@ -24,8 +34,8 @@ export const Blogs = ({ searchTermState, blogs }) => {
         return (
         <div>
             <div className="blogs-panel">
-                <article className="blogs" >
-                    <button className="save-blog" onClick={toggleBlogModal}>Add a Blog</button>
+                <article className="blogs" >{loggedIn?
+                    <button className="save-blog" onClick={toggleBlogModal}>Add a Blog</button>:""}
                     <div className="blogs-block">
                         {blogs.map(
                             (blog) => {
