@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { FavoriteBtn } from "../favorites/favoriteBtn"
 import "./landing.css"
 
 export const PhotoCarousel = ({resource}) => {
@@ -74,6 +75,9 @@ export const PhotoCarousel = ({resource}) => {
     </ul>
     </div>
     </div>
+    {
+                    <FavoriteBtn resource = {"photos"} resource_id={(currentPhoto+1)}/>
+    }
         </>
     }
 

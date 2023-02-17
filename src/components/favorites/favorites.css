@@ -4,7 +4,7 @@ button {
 }
 
 .favorite-btn {
-    width: 130px;
+    width: auto;
     height:40px;
     color: white;
     border-radius: 5px;
