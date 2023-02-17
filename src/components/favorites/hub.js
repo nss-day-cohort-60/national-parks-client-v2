@@ -46,11 +46,16 @@ export const UserHub = () => {
             {
                 favorites.map((fav) => {
                     return<>
-                     <h5>{fav?.event?.name}</h5>
-                     <h5>{fav?.park?.name}</h5>
-                     <h5>{fav?.post?.title}</h5>
-                     <p>{fav?.event?.description}</p>
-                     </>
+                    <div className="hub--subcontainer">
+                      <h5>{fav?.event?.name}</h5>
+                      <h5>{fav?.park?.name}</h5>
+                      <h5>{fav?.post?.title}</h5>
+                {fav.hasOwnProperty("post") && fav?.post?.photo !== null? <img src={fav?.post?.photo?.url} className="park-page--sect-photo" />: ""}
+                      <p>{fav?.event?.description}</p>
+                      <p>{fav?.park?.history}</p>
+                      <p>{fav?.post?.post_body}</p>
+                </div>
+                    </>
                     })
             }</>
         }
@@ -64,15 +69,11 @@ export const UserHub = () => {
                 }
                 </div>
                 <div className="hub--blogs"><h3><b>Blogs</b></h3>
+                <div className="">
                 {
                     findFavorites(blogs)
                 }
-                                <p>testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
-                testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
-                testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
-                testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
-                testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
-                </p>
+                </div>
                 </div>
                 <div className="hub--photos"><h3><b>Photos</b></h3>
                     <PhotoCarousel resource={photos} />
@@ -81,12 +82,6 @@ export const UserHub = () => {
                 {
                     findFavorites(parks)
                 }
-                <p>testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
-                testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
-                testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
-                testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
-                testing scroll testing scroll testing scroll testing scroll testig scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll testing scroll 
-                </p>
                 </div>
             </div>
       </>
