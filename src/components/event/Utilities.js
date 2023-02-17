@@ -109,11 +109,11 @@ export const DayLabels = () => {
       </div>
     )
   }
-  
+
   export const parseEvents = (events) => {
     return events.map(event => {
-        const from = new Date(event.dateFrom)
-      const to = new Date(event.dateTo)
+        const from = new Date(event.start_date)
+      const to = new Date(event.end_date)
   
       return {
         ...event,

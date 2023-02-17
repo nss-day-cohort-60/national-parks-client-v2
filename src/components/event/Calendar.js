@@ -20,7 +20,7 @@ const SAMPLE_META = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, se
 
 
 
-export const Calendar = ({ month, year, preloadedEvents = [] }) => {
+export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) => {
 
     const selectedDate = new Date(year, month - 1)
 
@@ -32,6 +32,8 @@ export const Calendar = ({ month, year, preloadedEvents = [] }) => {
 
     const parsedEvents = parseEvents(preloadedEvents)
     const [events, setEvents] = useState(parsedEvents)
+
+    console.log(events)
 
     useEffect(() => {
         // You could retrieve fresh events data here
@@ -107,6 +109,7 @@ export const Calendar = ({ month, year, preloadedEvents = [] }) => {
     }
 
     return (
+
         <div className="calendar">
 
             {isLoading && <Loader />}
