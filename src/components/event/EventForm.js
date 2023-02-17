@@ -5,7 +5,7 @@ import "./Calendar.css"
 export const EventForm = ({ setShowingEventForm, addEvent, editEvent, withEvent, setViewingEvent, preselectedDate }) => {
     const newEvent = withEvent || {}
     if (!withEvent && !!preselectedDate) {
-      newEvent.dateFrom = dateToInputFormat(preselectedDate)
+      newEvent.start_date = dateToInputFormat(preselectedDate)
     }
     const [event, setEvent] = useState(newEvent)
   
@@ -17,11 +17,11 @@ export const EventForm = ({ setShowingEventForm, addEvent, editEvent, withEvent,
           </label>
   
           <label>Date from
-            <input type="datetime-local" defaultValue={event.dateFrom || dateToInputFormat(preselectedDate)} onChange={(e) => setEvent({ ...event, dateFrom: e.target.value })} />
+            <input type="datetime-local" defaultValue={event.start_date || dateToInputFormat(preselectedDate)} onChange={(e) => setEvent({ ...event, start_date: e.target.value })} />
           </label>
   
           <label>Date to
-            <input type="datetime-local" defaultValue={event.dateTo} onChange={(e) => setEvent({ ...event, dateTo: e.target.value })} />
+            <input type="datetime-local" defaultValue={event.end_date} onChange={(e) => setEvent({ ...event, end_date: e.target.value })} />
           </label>
           
           <label>Type

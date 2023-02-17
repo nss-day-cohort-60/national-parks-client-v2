@@ -30,8 +30,8 @@ export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) 
     const [isLoading, setIsLoading] = useState(false)
     const [feedback, setFeedback] = useState()
 
-    const parsedEvents = parseEvents(preloadedEvents)
-    const [events, setEvents] = useState(parsedEvents)
+    
+    const [events, setEvents] = useState(databaseEvents)
 
     console.log(events)
 
@@ -48,6 +48,11 @@ export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) 
         // any new network requests
         console.log("Date has changed... Let's load some fresh data")
     }, [date])
+    useEffect(() => {
+        const parsedEvents = parseEvents(databaseEvents)
+        setEvents(parsedEvents)
+    }, [databaseEvents])
+
 
     const addEvent = (event) => {
         setIsLoading(true)
