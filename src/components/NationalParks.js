@@ -5,9 +5,8 @@ import { Register } from "./auth/Register"
 import { Landing } from "./landing/Landing"
 import { BlogContainer } from "./blog/BlogContainer"
 import { ParkPage } from "./parks/ParkPage"
-import { UserHub } from "./favorites/hub"
-import { Calendar } from "./event/Calendar"
 import { EventsContainer } from "./event/EventsContainer"
+import { UserHub } from "./favorites/hub"
 
 
 export const NationalParks = () => {
@@ -18,8 +17,8 @@ export const NationalParks = () => {
       <Route path="/register" element={<Register />} />
       <Route path="/blogs" element={<BlogContainer />} />
       <Route path="parks/:park_id" element={<ParkPage />} />
-      <Route path="/hub" element={<UserHub />} />
       <Route path="/calendar" element={<EventsContainer />} />
+      <Route path="/hub" element={<UserHub />} />
       <Route
         path="*"
         element={
