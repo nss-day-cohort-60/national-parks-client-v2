@@ -40,26 +40,19 @@ export const FavoriteBtn = ({resource, resource_id}) => {
           });
       }, []);
 
-    const [blogFav, setBlogFav] = useState({
-        blog_id:0
-    })
-
-    const [photoFav, setPhotoFav] = useState({
-        photo_id:0
-    })
 
     //POST and DELETE functions for the onClicks
 
     const createFavPhoto = (id) =>{
-        const copy = { ...photoFav }
-        copy.photo_id = id
-        setPhotoFav(copy)
+        const copy = { 
+            photo_id: id
+        }
 
         fetchIt(`http://localhost:8000/favorites`, {
             method: "POST",
             body: JSON.stringify(copy)
         }).then(() => {
-            navigate(0) //refreshes the page
+            photoFavorite()
         })
     }
 
@@ -76,9 +69,9 @@ export const FavoriteBtn = ({resource, resource_id}) => {
     }
 
     const removeFavPhoto = (id) =>{
-        const copy = { ...photoFav }
-                copy.photo_id = id
-                setPhotoFav(copy)
+        const copy = {
+            photo_id: id
+        }
 
         fetchIt(`http://localhost:8000/favorites/32`, {
             method: "DELETE",
