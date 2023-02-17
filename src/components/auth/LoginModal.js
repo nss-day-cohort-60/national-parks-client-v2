@@ -109,10 +109,7 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
     <>
       <form>
         <fieldset>
-          <label htmlFor="inputEmail" className="modal__email">
-            {" "}
-            Enter your email address:{" "}
-          </label>
+          <label htmlFor="inputEmail" className="modal__email">Enter your email address:</label>
           <input
             type="email"
             value={email}
@@ -121,6 +118,19 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
             placeholder="Email address"
             required
             autoFocus
+          />
+        </fieldset>
+        <fieldset>
+          <label htmlFor="password" className="modal__email">
+        Enter your password:</label>
+          <input
+            onChange={updateUser}
+            type="password"
+            id="password"
+            className="form-control"
+            value={user.password}
+            placeholder="Password"
+            required
           />
         </fieldset>
       </form>
@@ -191,7 +201,7 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
           <label htmlFor="email"> I am a Park Ranger </label>
         </fieldset>
         <fieldset>
-          <button type="submit"> Register </button>
+          <button type="submit" className="register-button"> Register </button>
         </fieldset>
       </form>
     </>
