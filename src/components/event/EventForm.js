@@ -25,15 +25,32 @@ export const EventForm = ({ setShowingEventForm, addEvent, editEvent, withEvent,
           </label>
           
           <label>Type
-            <select value={event.type ? event.type.toLowerCase() : "standard"} onChange={(e) => setEvent({ ...event, type: e.target.value })}>
-              <option value="standard">Standard</option>
-              <option value="busy">Busy</option>
-              <option value="holiday">Holiday</option>
+            <select value={event.type} defaultValue={event.type} onChange={(e) => setEvent({ ...event, type: e.target.value })}>
+              <option value="1">Group Hikes</option>
+              <option value="2">Park Science</option>
+              <option value="3">Park History</option>
+              <option value="4">Holidays Event</option>
+              <option value="5">Movement</option>
+              <option value="6">Ranger Events</option>
             </select>
           </label>
   
           <label>Description
             <input type="text" placeholder="Describe the event" defaultValue={event.meta} onChange={(e) => setEvent({ ...event, meta: e.target.value })} />
+          </label>
+
+          <label>Park
+            <select defaultValue={0} onChange={(e) => setEvent({ ...event, park: e.target.value })}>
+              <option value="1">Joshua Tree</option>
+              <option value="2">Everglades</option>
+              <option value="3">Great Smoky Mountains</option>
+              <option value="4">Haleakalā</option>
+              <option value="5">Yosemite</option>
+              <option value="6">Glacier National Park</option>
+              <option value="7">Kenai Fjords</option>
+              <option value="8">Shenandoah</option>
+              <option value="9">Saguaro National Park</option>
+            </select>
           </label>
   
           {withEvent ? (

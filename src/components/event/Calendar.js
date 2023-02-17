@@ -5,6 +5,7 @@ import { Grid } from "./Grid"
 import { Navigation } from "./CalendarNav"
 import { toStartOfDay, DAYS_SHORT, Loader, Feedback, DayLabels, parseEvents } from "./Utilities"
 import "./Calendar.css"
+import { fetchIt } from "../auth/fetchIt"
 
 
 
@@ -57,6 +58,15 @@ export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) 
     const addEvent = (event) => {
         setIsLoading(true)
         setShowingEventForm({ visible: false })
+        let post_event = {
+            ...event,
+            description: event.meta,
+        }
+        fetchIt(`http://localhost:8000/events`, {
+            method: "POST",
+            body: JSON.stringify(post_event)
+        })
+            .catch(error => console.log(error))
 
         // These timeouts are to imitate HTTP requests
         // So in a real impementation, you'd interact

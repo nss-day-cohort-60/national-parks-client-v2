@@ -32,7 +32,7 @@ export const ParkFilter= ({ searchSetterFunction, events, eventSetter }) => {
             .then(res => res.json())
             .then(data => eventSetter(data))
     }
-  
+
     // const blogSearchAndFilterFetcher = (park_id, searchTerm) => {
     //     return fetch(`http://localhost:8000/events?park_id=${park_id}&key_word=${searchTerm}`)
     //         .then(res => res.json())

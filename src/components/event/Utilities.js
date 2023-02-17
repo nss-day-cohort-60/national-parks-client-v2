@@ -73,7 +73,7 @@ export const Modal = ({ children, onClose, title, className }) => {
       </Fragment>
     )
   }
- 
+
   export const Feedback = ({ message, type }) => {
     return (
       <div className={`feedback ${type}`}>{message}</div>
