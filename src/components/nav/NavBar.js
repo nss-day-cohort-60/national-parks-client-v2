@@ -37,7 +37,7 @@ export const NavBar = () => {
             </li>
             <li className="navbar__item active">
               <Link className="navbar__link" to="/calendar">
-                Events
+                <h5>Events</h5>
               </Link>
             </li>
             {localStorage.getItem("np_token") ? (

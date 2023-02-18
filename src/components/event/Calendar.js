@@ -5,20 +5,13 @@ import { Grid } from "./Grid"
 import { Navigation } from "./CalendarNav"
 import { toStartOfDay, DAYS_SHORT, Loader, Feedback, DayLabels, parseEvents } from "./Utilities"
 import "./Calendar.css"
+import { fetchIt } from "../auth/fetchIt"
 
 
 
 
 // Some config for convenience
 const MOCK_LOADING_TIME = 1000
-const SAMPLE_META = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-
-
-// Could be used to filter out invalid events data also
-// (ie. missing properties) or events that can't be parsed 
-// to contain valid to/from dates
-
-
 
 export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) => {
 
@@ -30,24 +23,16 @@ export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) 
     const [isLoading, setIsLoading] = useState(false)
     const [feedback, setFeedback] = useState()
 
-    
+
     const [events, setEvents] = useState(databaseEvents)
 
     console.log(events)
 
     useEffect(() => {
-        // You could retrieve fresh events data here
-        // So whenever the calendar month is toggled,
-        // make a request and populate `events` with the
-        // new results
-
-        // Would be better to cache these results so you
-        // don't make needless network requests
-        // So you could maintain an array of `date`s
-        // and simply consult this before you fire off
-        // any new network requests
         console.log("Date has changed... Let's load some fresh data")
     }, [date])
+
+
     useEffect(() => {
         const parsedEvents = parseEvents(databaseEvents)
         setEvents(parsedEvents)
@@ -57,13 +42,17 @@ export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) 
     const addEvent = (event) => {
         setIsLoading(true)
         setShowingEventForm({ visible: false })
+        let post_event = {
+            ...event,
+            description: event.meta,
+        }
+        fetchIt(`http://localhost:8000/events`, {
+            method: "POST",
+            body: JSON.stringify(post_event)
+        })
+            .catch(error => console.log(error))
 
-        // These timeouts are to imitate HTTP requests
-        // So in a real impementation, you'd interact
-        // with your backend service here and handle
-        // the result accordingly...
-        // Likewise for `editEvent` and `deleteEvent`
-        // below
+
         setTimeout(() => {
             const parsedEvents = parseEvents([event])
 
@@ -126,22 +115,6 @@ export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) 
                 />
             }
 
-            <Navigation
-                date={date}
-                setDate={setDate}
-                setShowingEventForm={setShowingEventForm}
-            />
-
-            <DayLabels />
-
-            <Grid
-                date={date}
-                events={events}
-                setShowingEventForm={setShowingEventForm}
-                setViewingEvent={setViewingEvent}
-                actualDate={date}
-            />
-
             {viewingEvent &&
                 <Event
                     event={viewingEvent}
@@ -161,7 +134,27 @@ export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) 
                     setViewingEvent={setViewingEvent}
                 />
             }
+
+            <Navigation
+                date={date}
+                setDate={setDate}
+                setShowingEventForm={setShowingEventForm}
+            />
+
+            <DayLabels />
+
+            <Grid
+                date={date}
+                events={events}
+                setShowingEventForm={setShowingEventForm}
+                setViewingEvent={setViewingEvent}
+                actualDate={date}
+            />
+
+
         </div>
     )
 }
+
+
 

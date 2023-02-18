@@ -64,7 +64,7 @@ export const Modal = ({ children, onClose, title, className }) => {
   export const Loader = () => {
     return (
       <Fragment>
-        <div className="overlay" />
+        <div className="calendarOverlay" />
         <div className="loader">
           <div className="lds-roller">
             <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>  
@@ -73,7 +73,7 @@ export const Modal = ({ children, onClose, title, className }) => {
       </Fragment>
     )
   }
- 
+
   export const Feedback = ({ message, type }) => {
     return (
       <div className={`feedback ${type}`}>{message}</div>
@@ -101,14 +101,18 @@ export const DayLabels = () => {
   // An individual event displayed within the calendar grid itself
   // can be clicked to open the main event view
   export const MiniEvent = ({ event, setViewingEvent }) => {
+    const firstWord = event.park.name ? event.park.name.split(" ")[0] : "standard";
+  
     return (
       <div 
-        className={`miniEvent ${event.type ? event.type.toLowerCase() : "standard"}`} 
-        onClick={() => setViewingEvent(event)}>
+        className={`miniEvent ${firstWord}`} 
+        onClick={() => setViewingEvent(event)}
+      >
         {event.name}
       </div>
-    )
-  }
+    );
+  };
+  
 
   export const parseEvents = (events) => {
     return events.map(event => {

@@ -1,10 +1,18 @@
 .calendar {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
+    width: 80%;
     font-family: sans-serif;
     border: 4px solid #e6e6e6;
     position: relative;
+  }
+
+  .EventsPage {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
   
   .calendar a {
@@ -25,7 +33,7 @@
   
   
   .current {
-    background: #d3edd3;
+    background:rgb(200, 236, 200);
   }
   
   .current .date {
@@ -58,13 +66,40 @@
     cursor: pointer;
   }
   
-  .miniEvent.holiday {
-    background: #3fb73f;
+  .miniEvent.Shenandoah {
+    background: rgba(0, 128, 0, 0.749);
   }
   
-  .miniEvent.busy {
-    background: #e7713c;
+  .miniEvent.Great {
+    background: #e9733d;
   }
+
+  .miniEvent.Everglades {
+    background: lightslategray
+  }
+
+  .miniEvent.Joshua {
+    background: rgb(215, 163, 117)
+  }
+  .miniEvent.Yosemite {
+    background: rgb(106, 105, 105)
+  }
+  .miniEvent.Glacier {
+    background: rgb(92, 180, 236);
+  }
+  
+  .miniEvent.Saguaro {
+    background: rgb(167, 206, 109);
+  }
+
+  .miniEvent.Kenai {
+    background: rgb(100, 120, 200);
+  }
+
+  .miniEvent.Haleakalā {
+    background: rgb(64, 52, 140);
+  }
+  
   
   .navigation {
     width: 100%;
@@ -86,7 +121,7 @@
     text-decoration: none;
     display: inline-block;
     padding: 0 10px;
-    background: #27bc27;
+    background: green;
     border-radius: 5px;
     color: white;
     margin-left: 10px;
@@ -151,7 +186,7 @@
   
   button {
     width: 100%;
-    background: #3fb73f;
+    background: green;
     border: 0;
     border-bottom: 3px solid green;
     color: white;
@@ -166,12 +201,8 @@
   }
   
   .calendarOverlay {
-    background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: center;
   }
   
   .calenderModal {
@@ -185,7 +216,10 @@
     border-radius: 3px;
     max-width: 600px;
     min-width: 300px;
+
   }
+
+  .calendarModals
   
   .calendarModal .calendarInner {
      padding: 20px 30px 30px 30px;
@@ -202,7 +236,9 @@
     font-size: 0.8em;
     line-height: 1.5em;
   }
-  
+  .calendarModal.eventModal {
+    z-index: 3;
+  }
   .calendarModal .close {
     margin-top: 22px;
     font-size: 0.7em;
@@ -221,7 +257,7 @@
   .eventModal .delete {
     display: block;
     background: #df3317;
-    border-bottom: 2pxsolid #a90c0c;
+    border-bottom: 2px solid #a90c0c;
     color: white;
     text-decoration: none;
     padding: 10px;
@@ -241,7 +277,7 @@
       left: 5%;
       text-align: center;
       bottom: 5%;
-      background: #3fb73f;
+      background: green;
       border-bottom: 3px solid green;
       border-radius: 5px;
       text-align: center;
