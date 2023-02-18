@@ -120,6 +120,11 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
             type="email"
             value={email}
             onChange={(evt) => setEmail(evt.target.value)}
+            onKeyUp={(evt) => {
+              if (evt.key === 'Enter') {
+                handleLogin()
+              }
+            }}
             className="form-control"
             placeholder="Email address"
             required
