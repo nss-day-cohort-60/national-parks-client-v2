@@ -12,8 +12,8 @@ export const EventsContainer = () => {
     return (
     <section className="Events">
             <div className="EventsPage">
-                <ParkFilter events={events} eventSetter={setEvents} park_id={park_id} setPark_id={setPark_id}/>
                 <Header park_id={park_id} events={events[0]}/>
+                <ParkFilter events={events} eventSetter={setEvents} park_id={park_id} setPark_id={setPark_id}/>
                 <Calendar month={14} year={2022} databaseEvents={events}  />
                 
             </div>

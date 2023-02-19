@@ -8,6 +8,15 @@
     position: relative;
   }
 
+  .EventsHeader {
+    display: flex;
+    font-size: 40px;
+    font-weight: bold;
+    justify-content: center;
+    padding-bottom: 15px;
+    padding-top: 15px
+  }
+
   .EventsPage {
     display: flex;
     justify-content: center;
