@@ -75,7 +75,9 @@ export const NavBar = () => {
               </li>
             )}
           </ul>
-          <div className="welcome">{name ? `Welcome ${name}!` : ""}</div>
+          <div className="welcome">
+            <h5>{name ? `Welcome ${name}!` : ""}</h5>
+          </div>
         </div>
         <LoginModal
           show={show}

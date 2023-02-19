@@ -32,6 +32,10 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
   });
 
   const handleLogin = () => {
+    if (email === ""){
+      window.alert("Please enter an email")
+      return
+    }
     setShowSpinner(true);
     fetch(`http://localhost:8000/login`, {
       method: "POST",
@@ -78,6 +82,22 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
 
   const registerNewUser = (e) => {
     e.preventDefault();
+    if (user.first_name === "") {
+      window.alert('Please enter your first name')
+      return
+    } 
+    if (user.last_name === "") {
+      window.alert("Please enter your last name");
+      return;
+    } 
+    if (user.email === "") {
+      window.alert("Please enter your email");
+      return;
+    } 
+    if (user.password === "") {
+      window.alert("Please enter your password");
+      return;
+    } 
     return fetch("http://localhost:8000/register", {
       method: "POST",
       headers: {
@@ -156,18 +176,29 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
           <label htmlFor="firstName"> First Name </label>
           <input
             onChange={updateUser}
+            onKeyUp={(evt) => {
+              if (evt.key === "Enter") {
+                registerNewUser();
+              }
+            }}
             type="text"
             id="first_name"
             className="form-control"
             value={user.first_name}
             placeholder="Enter your first name"
             required
+            autoFocus
           />
         </fieldset>
         <fieldset>
           <label htmlFor="lastName"> Last Name </label>
           <input
             onChange={updateUser}
+            onKeyUp={(evt) => {
+              if (evt.key === "Enter") {
+                registerNewUser();
+              }
+            }}
             type="text"
             id="last_name"
             className="form-control"
@@ -180,6 +211,11 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
           <label htmlFor="email"> Email address </label>
           <input
             onChange={updateUser}
+            onKeyUp={(evt) => {
+              if (evt.key === "Enter") {
+                registerNewUser();
+              }
+            }}
             type="email"
             id="email"
             className="form-control"
@@ -192,6 +228,11 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
           <label htmlFor="password"> Password </label>
           <input
             onChange={updateUser}
+            onKeyUp={(evt) => {
+              if (evt.key === "Enter") {
+                registerNewUser();
+              }
+            }}
             type="password"
             id="password"
             className="form-control"
@@ -213,7 +254,10 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
           <label htmlFor="email"> I am a Park Ranger </label>
         </fieldset>
         <fieldset>
-          <button type="submit" className="register-button"> Register </button>
+          <button type="submit" className="register-button">
+            {" "}
+            Register{" "}
+          </button>
         </fieldset>
       </form>
     </>

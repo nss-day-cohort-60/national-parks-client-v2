@@ -1,6 +1,7 @@
 .parks {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .park {
@@ -25,6 +26,7 @@
     height: 25rem;
     border-radius: 0.5rem;
     overflow: hidden;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 #park-page--info{
@@ -82,4 +84,7 @@
 
 .park--blogs p{
     padding-left: 8px;
+}
+.park-row {
+    margin-top: 75px;
 }

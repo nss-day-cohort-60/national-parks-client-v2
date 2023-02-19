@@ -5,9 +5,6 @@ import "./parks.css";
 import { fetchIt } from "../auth/fetchIt";
 import { FavoriteBtn } from "../favorites/favoriteBtn";
 
-const COMING_SOON =
-  "https://images.pexels.com/photos/4439444/pexels-photo-4439444.jpeg";
-
 const PictureCard = ({ title, image, body, created }) => {
   return (
     <div className="card my-2">
@@ -60,7 +57,7 @@ export const ParkPage = () => {
   const [amenities, setAmenities] = useState([]);
   const [naturalAttractions, setNaturalAttractions] = useState([]);
   const [blogs, setBlogs] = useState([]);
-  const [parkImg, setParkImg] = useState(COMING_SOON);
+
 
   useEffect(() => {
     fetch(`http://localhost:8000/parks/${park_id}`)
@@ -75,7 +72,6 @@ export const ParkPage = () => {
       .then((response) => response.json())
       .then((parkPhotoArray) => {
         setParkPhotos(parkPhotoArray);
-        setParkImg(parkPhotoArray[0].url);
       });
   }, []);
 
@@ -143,20 +139,21 @@ export const ParkPage = () => {
   return (
     <>
       <div className="container">
-        <div className="row">
-          <div className="col-sm-12 col-md-6">
-            <img src={parkImg} alt="park-photo" className="img-fluid" />
+        <div className="row park-row">
+          <div className="col-sm-12 col-md-7">
+              <PhotoCarousel
+                resource={parkPhotos}/>
           </div>
-          <div className="col">
+          <div className="col-sm-12 col-md-5">
             <section>
               <h1>{park.name}</h1>
               <p>{park.history}</p>
               <h1>Location</h1>
               <p>
-                {park.city},{park.state}
+                {park.city}, {park.state}
               </p>
               <p>
-                {park.latitude},{park.longitude}
+                Coordinates: {park.latitude},{park.longitude}
               </p>
               <FavoriteBtn />
             </section>
