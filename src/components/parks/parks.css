@@ -1,6 +1,7 @@
 .parks {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .park {
@@ -25,6 +26,7 @@
     height: 25rem;
     border-radius: 0.5rem;
     overflow: hidden;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 #park-page--info{
@@ -61,25 +63,30 @@
     color: green;
 }
 
-#wildlife, #amenities, #campgrounds{
-    width: 700px;
+.park-row {
+    margin-top: 65px;
+}
+.parkPage-subheader{
+    margin-bottom: 25px;
+}
+.camp-image {
+    width:  400px;
+    height: 175px;
+    object-fit: cover;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    box-shadow: rgb(38, 57, 77) 0px 10px 20px -10px;
+    border-radius: 5px;
+}
+.card {
+    background-color: rgb(251, 250, 249);
+    border: none;
+    text-align: justify
 }
 
-#blog--container{
-    max-height: 400px;
-    overflow-y: auto;
+.park-card {
+    padding: 0;
 }
-
-.park--blogs{
-    display: flex;
-    flex-direction: column;
-}
-
-.park--blogs div{
-    display:flex;
-    object-fit:contain;
-}
-
-.park--blogs p{
-    padding-left: 8px;
+hr {
+    color: rgb(7, 6, 6);
+    margin-top: 50px;
 }
