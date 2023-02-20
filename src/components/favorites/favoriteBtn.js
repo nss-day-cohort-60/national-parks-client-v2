@@ -77,8 +77,17 @@ export const FavoriteBtn = ({resource, resource_id}) => {
         })
     }
 
-    const createFavEvent = () =>{
-        
+    const createFavEvent = (id) =>{
+      const copy = { 
+        event_id: id
+    }
+
+    fetchIt(`http://localhost:8000/favorites`, {
+        method: "POST",
+        body: JSON.stringify(copy)
+    }).then(() => {
+        eventFavorite()
+    })
     }
 
     const createFavBlog = (id) =>{
@@ -120,7 +129,7 @@ export const FavoriteBtn = ({resource, resource_id}) => {
 
     const removeFavEvent = (id) =>{
       const copy = {
-          photo_id: id
+          event_id: id
       }
 
       fetchIt(`http://localhost:8000/favorites/32`, {
@@ -189,9 +198,15 @@ export const FavoriteBtn = ({resource, resource_id}) => {
 
     }
     const eventFavorite = () =>{
-        return <>
-        <button className="favorite-btn"><p>Add Event to Favorites</p> </button>
-        </>
+      let arrayOfIds = []
+      favEvents.map((fav)=>{
+        arrayOfIds.push(fav?.event?.id)
+      })
+      if(arrayOfIds.includes(resource_id)){
+         return <><button className="favorite-btn" onClick={()=>{removeFavEvent(resource_id); buttonPressed(true)}}><p>Remove Event from Favorites</p></button></>
+      } else {
+          return <><button className="favorite-btn" onClick={()=>{createFavEvent(resource_id); buttonPressed(true)}}><p>Add Event to Favorites</p></button></>
+        }
     }
 
     //verifyFavorite figures out which function needs to be called, based on the resource prop
