@@ -35,13 +35,13 @@ export const NavBar = () => {
                 <h5>Blogs</h5>
               </Link>
             </li>
-            <li className="navbar__item active">
+            {localStorage.getItem("np_token") ? (
+              <>
+              <li className="navbar__item active">
               <Link className="navbar__link" to="/calendar">
                 <h5>Events</h5>
               </Link>
             </li>
-            {localStorage.getItem("np_token") ? (
-              <>
                 <li className="navbar__item navbar__logout">
                   <Link className="navbar__link" to="my-blogs">
                     <h5>My Blogs</h5>

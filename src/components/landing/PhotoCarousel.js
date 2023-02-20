@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { FavoriteBtn } from "../favorites/favoriteBtn"
 import "./landing.css"
 
 export const PhotoCarousel = ({resource}) => {
@@ -41,6 +42,14 @@ export const PhotoCarousel = ({resource}) => {
         },
         [prevButton]
     )
+    
+    const verifyUser = () => {
+        if (localStorage.getItem("np_token")){
+            return <><FavoriteBtn resource = {"photos"} resource_id={(currentPhoto+1)}/></>
+        } else {
+            return <></>
+        }
+    }
 
     const LandingCarousel = () => {
     return <>
@@ -74,6 +83,9 @@ export const PhotoCarousel = ({resource}) => {
     </ul>
     </div>
     </div>
+    {
+        verifyUser()
+    }
         </>
     }
 
