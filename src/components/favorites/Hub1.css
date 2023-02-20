@@ -1,5 +1,5 @@
 .box {
-    height: 300px;
+   max-height: 200px;
     overflow-y: auto;
     text-align: justify;
     /* border:1px solid grey; */
@@ -15,4 +15,61 @@
 
 .hub-title {
     margin-top: 50px;
+}
+
+.hub-events::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+.hub-events::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.hub-events::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.hub-events::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.hub-blogs::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+.hub-blogs::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.hub-blogs::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.hub-blogs::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.hub-parks::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+.hub-parks::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.hub-parks::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.hub-parks::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
