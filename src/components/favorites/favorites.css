@@ -4,9 +4,11 @@ button {
 }
 
 .favorite-btn {
-    width: 130px;
+    width: auto;
     height:40px;
     color: white;
+    text-shadow: #000 0px 0px 5px;
+    -webkit-font-smoothing: antialiased;
     border-radius: 5px;
     padding: 10px 25px;
     background-color: #89d8d3;

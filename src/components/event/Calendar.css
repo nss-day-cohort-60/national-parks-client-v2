@@ -193,7 +193,7 @@
     display: block;
   }
   
-  button {
+  .regButton {
     width: 100%;
     background: green;
     border: 0;
@@ -204,7 +204,7 @@
     border-radius: 5px;
   }
   
-  button.red {
+  .regButton--red {
     background: #c82727;
     border-bottom: 3px solid #a51616;
   }
@@ -245,9 +245,7 @@
     font-size: 0.8em;
     line-height: 1.5em;
   }
-  .calendarModal.eventModal {
-    z-index: 3;
-  }
+
   .calendarModal .close {
     margin-top: 22px;
     font-size: 0.7em;
