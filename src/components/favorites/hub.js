@@ -46,7 +46,7 @@ export const UserHub = () => {
             {
                 favorites.map((fav) => {
                     return<>
-                    <div className="hub--subcontainer">
+                    <div className="container-fluid">
                       <h5>{fav?.event?.name}</h5>
                       <h5>{fav?.park?.name}</h5>
                       <h5>{fav?.post?.title}</h5>
@@ -61,8 +61,8 @@ export const UserHub = () => {
         }
 
       return <>
-            <div className="hub--container">
-                <h1 className="hub--title"> YOUR FAVORITES HUB </h1>
+            <div className="container-fluid">
+                <h1 className="blogs-title">Your Favorites Hub</h1>
                 <div className="hub--events"><h3><b>Events</b></h3>
                 {
                     findFavorites(events)

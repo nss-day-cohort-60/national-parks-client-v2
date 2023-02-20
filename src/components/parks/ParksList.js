@@ -19,7 +19,7 @@ export const ParkList = () => {
 
     return <>
         
-        <div className="parkslist--container">
+        <div className="park-page--container">
 
         <article className="parks">
             {
