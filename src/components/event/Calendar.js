@@ -6,6 +6,7 @@ import { Navigation } from "./CalendarNav"
 import { toStartOfDay, DAYS_SHORT, Loader, Feedback, DayLabels, parseEvents } from "./Utilities"
 import "./Calendar.css"
 import { fetchIt } from "../auth/fetchIt"
+import { ParkFilter } from "./ParkFilter"
 
 
 
@@ -50,6 +51,8 @@ export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) 
             method: "POST",
             body: JSON.stringify(post_event)
         })
+        .then(res => res.JSON)
+        .then(data => ParkFilter([data]))
             .catch(error => console.log(error))
 
 
