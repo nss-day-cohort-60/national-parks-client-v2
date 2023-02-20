@@ -63,12 +63,12 @@ export const UserHub = () => {
       return <>
             <div className="container-fluid">
                 <h1 className="blogs-title">Your Favorites Hub</h1>
-                <div className="hub--events"><h3><b>Events</b></h3>
+                <div className="hub--events ms-5 mt-5"><h3><b>Events</b></h3>
                 {
                     findFavorites(events)
                 }
                 </div>
-                <div className="hub--blogs"><h3><b>Blogs</b></h3>
+                <div className="hub--blogs ms-5"><h3><b>Blogs</b></h3>
                 <div className="">
                 {
                     findFavorites(blogs)

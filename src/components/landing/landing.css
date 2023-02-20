@@ -96,8 +96,8 @@
 }
 
 .fav--carousel {
-    width: 750px;
-    height: 200px;
+    width: 95%;
+    height: 50%;
     position: relative;
 }
 
@@ -153,13 +153,13 @@
     outline: 1px solid black;
 }
 
-.fav--carousel--button.prev {
+ .fav--carousel--button.prev {
     left: 1rem;
 }
 
 .fav--carousel--button.next {
     left: 40rem;
-}
+} 
 
 #taglines::before{
     content: '';

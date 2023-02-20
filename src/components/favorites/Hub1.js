@@ -67,30 +67,30 @@ export const UserHub1 = () => {
 
   return (
     <>
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
           <h1 className="d-flex justify-content-center hub-title">
             Your Favorites Hub
           </h1>
         </div>
-        <div className="row mt-2 mx-5">
-          <div className="col-sm-12 col-md-12 mt-5 hub-carousel">
+        <div className="row mt-2 mb-5 mt-5">
+          <div className="col-sm-12 col-md-8 hub-carousel">
             <h3 className="hub-subtitle">Photos</h3>
             <PhotoCarousel resource={photos} />
-          </div>
-        </div>
-      </div>
-      <div className="container-fluid">
-        <div className="row mx-5 d-flex justify-content-around mb-5">
-          <div className="col-sm-12 col-md-4">
-            <h3 className="hub-subtitle">Events</h3>
-            <div className="box hub-events">{findFavorites(events)}</div>
           </div>
           <div className="col-sm-12 col-md-4">
             <h3 className="hub-subtitle">Parks</h3>
             <div className="box hub-parks">{findFavorites(parks)}</div>
           </div>
-          <div className="col-sm-12 col-md-4">
+        </div>
+      </div>
+      <div className="container">
+        <div className="row mb-5 mt-5">
+          <div className="col-sm-12 col-md-6">
+            <h3 className="hub-subtitle">Events</h3>
+            <div className="box hub-events">{findFavorites(events)}</div>
+          </div>
+          <div className="col-sm-12 col-md-6">
             <h3 className="hub-subtitle">Blogs</h3>
             <div className="box hub-blogs">{findFavorites(blogs)}</div>
           </div>

@@ -1,0 +1,8 @@
+.hamburger{
+    margin-left: auto;
+    padding:5px;
+}
+
+.hamburger:hover{
+    cursor: pointer;
+}

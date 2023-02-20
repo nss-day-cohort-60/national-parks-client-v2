@@ -90,10 +90,10 @@ export const MyBlogs = () => {
                       <div className="no-image"></div>
                     )}
                     <div>
-                      <h5 className="blog-title">{blog.title}</h5>
+                      <h5 className="blog-title ms-2">{blog.title}</h5>
                     </div>
                     <div className="blog-post">
-                      <p>{blog.post_body}</p>
+                      <p className="ms-2">{blog.post_body}</p>
                     </div>
                   </div>
                 </header>
