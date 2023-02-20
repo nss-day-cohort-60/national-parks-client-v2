@@ -9,6 +9,8 @@ export const Event = ({ event, setViewingEvent, setShowingEventForm, deleteEvent
 
   const signUp = () => {
     event = {...event, "register": true}
+    event.event_type = event.event_type.id
+    event.park = event.park.id
     fetchIt(`http://localhost:8000/events`, {
             method: "POST",
             body: JSON.stringify(event)
