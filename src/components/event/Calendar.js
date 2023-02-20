@@ -14,7 +14,7 @@ import { ParkFilter } from "./ParkFilter"
 // Some config for convenience
 const MOCK_LOADING_TIME = 1000
 
-export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) => {
+export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [], eventSetter, park_id }) => {
 
     const selectedDate = new Date(year, month - 1)
 
@@ -39,7 +39,6 @@ export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) 
         setEvents(parsedEvents)
     }, [databaseEvents])
 
-
     const addEvent = (event) => {
         setIsLoading(true)
         setShowingEventForm({ visible: false })
@@ -52,9 +51,8 @@ export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) 
             body: JSON.stringify(post_event)
         })
         .then(res => res.JSON)
-        .then(data => ParkFilter([data]))
+        .then(() => {window.location.reload()})
             .catch(error => console.log(error))
-
 
         setTimeout(() => {
             const parsedEvents = parseEvents([event])

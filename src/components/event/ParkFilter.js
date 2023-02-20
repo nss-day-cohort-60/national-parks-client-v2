@@ -24,6 +24,11 @@ export const ParkFilter= ({ events, eventSetter, setPark_id, park_id }) => {
     )
 
     useEffect(() => {
+        eventSetter(events)
+    }, [events]
+    )
+
+    useEffect(() => {
         menuHTML()
     }, [parks, events])
 
