@@ -129,6 +129,14 @@ export const ParkPage = () => {
       });
   }, []);
 
+  const verifyUser = (id) => {
+    if (localStorage.getItem("np_token")){
+        return <><FavoriteBtn resource = {"parks"} resource_id={id}/></>
+    } else {
+        return <></>
+    }
+  }
+
   const Amenity = () => {
     return amenities.map((amenity) => {
       if (amenity.name !== null) {
@@ -168,7 +176,9 @@ export const ParkPage = () => {
               <p>
                 Coordinates: {park.latitude},{park.longitude}
               </p>
-              <FavoriteBtn resource={"parks"} resource_id={Number(park_id)}/>
+              {
+                verifyUser(park.id)
+                }
             </section>
           </div>
         </div>

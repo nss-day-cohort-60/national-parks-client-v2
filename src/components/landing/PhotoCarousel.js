@@ -42,6 +42,14 @@ export const PhotoCarousel = ({resource}) => {
         },
         [prevButton]
     )
+    
+    const verifyUser = () => {
+        if (localStorage.getItem("np_token")){
+            return <><FavoriteBtn resource = {"photos"} resource_id={(currentPhoto+1)}/></>
+        } else {
+            return <></>
+        }
+    }
 
     const LandingCarousel = () => {
     return <>
@@ -76,7 +84,7 @@ export const PhotoCarousel = ({resource}) => {
     </div>
     </div>
     {
-                    <FavoriteBtn resource = {"photos"} resource_id={(currentPhoto+1)}/>
+        verifyUser()
     }
         </>
     }

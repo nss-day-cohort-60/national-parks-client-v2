@@ -4,6 +4,14 @@ import { AddBlog } from "./AddBlog";
 import { EditBlog } from "./EditBlog";
 import { FavoriteBtn } from "../favorites/favoriteBtn";
 
+const verifyUser = (id) => {
+  if (localStorage.getItem("np_token")){
+      return <><FavoriteBtn resource = {"blogs"} resource_id={id}/></>
+  } else {
+      return <></>
+  }
+}
+
 const MyCard = ({ title, image, body, blog_id }) => {
   return (
     <div className="card my-5 mx-5">
@@ -23,7 +31,7 @@ const MyCard = ({ title, image, body, blog_id }) => {
         </div>
       </div>
       <div>
-        <FavoriteBtn resource={"blogs"} resource_id={blog_id}/>
+        {verifyUser(blog_id)}
       </div>
     </div>
   );

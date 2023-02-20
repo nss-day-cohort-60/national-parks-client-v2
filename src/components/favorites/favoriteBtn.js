@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { fetchIt } from "../auth/fetchIt";
-import { useNavigate } from "react-router-dom";
 import "./favorites.css"
 
 export const FavoriteBtn = ({resource, resource_id}) => {
@@ -122,6 +121,7 @@ export const FavoriteBtn = ({resource, resource_id}) => {
       })
   }
 
+    //the remove fav[Resource] functions all call DELETE methods on /favorites/32 because the Django DESTROY method requires a primary key in the query params, but we wrote a DESTROY method that does not use it for deletion.
     const removeFavPhoto = (id) =>{
         const copy = {
             photo_id: id
@@ -209,13 +209,13 @@ export const FavoriteBtn = ({resource, resource_id}) => {
 
     //verifyFavorite figures out which function needs to be called, based on the resource prop
     const verifyFavorite = () => {
-        if (localStorage.getItem("np_token")&&resource === "photos"){
+        if (resource === "photos"){
             return photoFavorite()
-        } else if (localStorage.getItem("np_token")&&resource === "events"){
+        } else if (resource === "events"){
             return eventFavorite()
-        } else if (localStorage.getItem("np_token")&&resource === "blogs"){
+        } else if (resource === "blogs"){
             return blogFavorite()
-        } else if (localStorage.getItem("np_token")&&resource === "parks"){
+        } else if (resource === "parks"){
             return parkFavorite()
         } else {
           return <></>
