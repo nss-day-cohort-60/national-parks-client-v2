@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { fetchIt } from "../auth/fetchIt";
 import { PhotoCarousel } from "../landing/PhotoCarousel";
 import { FavoriteBtn } from "./favoriteBtn";
+import './Hub1.css'
+
 
 export const UserHub1 = () => {
 
@@ -41,7 +43,6 @@ export const UserHub1 = () => {
               {favorites.map((fav) => {
                 return (
                   <>
-                    <div className="container-fluid">
                       <h5>{fav?.event?.name}</h5>
                       <h5>{fav?.park?.name}</h5>
                       <h5>{fav?.post?.title}</h5>
@@ -57,7 +58,6 @@ export const UserHub1 = () => {
                       <p>{fav?.event?.description}</p>
                       <p>{fav?.park?.history}</p>
                       <p>{fav?.post?.post_body}</p>
-                    </div>
                   </>
                 );
               })}
@@ -66,6 +66,34 @@ export const UserHub1 = () => {
         };
 
   return (
-    <div>hub1</div>
-  )
+    <>
+      <div className="container-fluid">
+        <div className="row">
+          <h1 className="d-flex justify-content-center hub-title">Your Favorites Hub</h1>
+        </div>
+        <div className="row mt-2 mx-5">
+          <div className="col-sm-12 col-md-12 mt-5 hub-carousel">
+            <h3 className="hub-subtitle">Photos</h3>
+            <PhotoCarousel resource={photos} />
+          </div>
+        </div>
+      </div>
+      <div className="container-fluid">
+        <div className="row mx-5">
+          <div className="col-sm-12 col-md-4">
+            <h3 className="hub-subtitle">Events</h3>
+            <div className="box">{findFavorites(events)}</div>
+          </div>
+          <div className="col-sm-12 col-md-4">
+            <h3 className="hub-subtitle">Parks</h3>
+            <div className="box">{findFavorites(parks)}</div>
+          </div>
+          <div className="col-sm-12 col-md-4">
+            <h3 className="hub-subtitle">Blogs</h3>
+            <div className="box">{findFavorites(blogs)}</div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
