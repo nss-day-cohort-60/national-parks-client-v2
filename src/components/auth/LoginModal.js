@@ -36,10 +36,17 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
       window.alert("Please enter an email")
       return
     }
+    if (password === ""){
+      window.alert("Please enter a password")
+      return
+    }
     setShowSpinner(true);
     fetch(`http://localhost:8000/login`, {
       method: "POST",
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ 
+        email: email,
+        password: password
+      }),
       headers: {
         "Content-Type": "application/json",
       },
