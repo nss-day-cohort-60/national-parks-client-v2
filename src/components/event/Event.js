@@ -1,10 +1,11 @@
 import { Modal } from "./Utilities"
 import "./Calendar.css"
 import { fetchIt } from "../auth/fetchIt"
+import { json } from "react-router-dom"
 
 export const Event = ({ event, setViewingEvent, setShowingEventForm, deleteEvent, setEvents }) => {
   console.log(event)
-  const isStaff = localStorage.getItem('np_token').is_staff
+  const isStaff = JSON.parse(localStorage.getItem('np_token')).staff
 
   const signUp = () => {
     event = {...event, "register": true}
