@@ -25,7 +25,7 @@ export const EventForm = ({ setShowingEventForm, addEvent, editEvent, withEvent,
           </label>
           
           <label>Type
-            <select value={event.type} defaultValue={event.type} onChange={(e) => setEvent({ ...event, type: e.target.value })}>
+            <select value={event.event_type} defaultValue={event.event_type} onChange={(e) => setEvent({ ...event, event_type: e.target.value })}>
               <option value="1">Group Hikes</option>
               <option value="2">Park Science</option>
               <option value="3">Park History</option>
