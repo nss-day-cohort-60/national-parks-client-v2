@@ -9,7 +9,8 @@
   }
 
   .switchTitle {
-    margin: 0.5rem;    
+    margin: 0.5rem;  
+    font-weight: bold; 
   }
   
   /* Hide default HTML checkbox */
@@ -75,6 +76,10 @@
 
   .parksContainer {
     display: flex;
+  }
+  .parks__title {
+    font-weight: bold;
+    margin-top: 40px;
   }
 
 

@@ -58,7 +58,7 @@
 
 .carousel--slide[data-active]{
     opacity: 1;
-    z-index: 1;
+    /* z-index: 1; */
     transition-delay: 0ms;
 }
 
