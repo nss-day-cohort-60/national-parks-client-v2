@@ -4,7 +4,7 @@ import { AddBlog } from "./AddBlog";
 import { EditBlog } from "./EditBlog";
 import { FavoriteBtn } from "../favorites/favoriteBtn";
 
-const MyCard = ({ title, image, body }) => {
+const MyCard = ({ title, image, body, blog_id }) => {
   return (
     <div className="card my-5 mx-5">
       <div className="row no-gutters">
@@ -23,7 +23,7 @@ const MyCard = ({ title, image, body }) => {
         </div>
       </div>
       <div>
-        <FavoriteBtn />
+        <FavoriteBtn resource={"blogs"} resource_id={blog_id}/>
       </div>
     </div>
   );
@@ -67,6 +67,7 @@ export const Blogs = ({ searchTermState, blogs }) => {
             title={blog.title}
             image={blog.photo?.url}
             body={blog.post_body}
+            blog_id={blog.id}
           />
         ))}
       </div>

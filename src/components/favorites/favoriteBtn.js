@@ -9,6 +9,7 @@ export const FavoriteBtn = ({resource, resource_id}) => {
     const [favBlogs, setFavBlogs] = useState([])
     const [favParks, setFavParks] = useState([])
     const [favPhotos, setFavPhotos] = useState([])
+    const [button, buttonPressed] = useState(false)
     const navigate = useNavigate()
     
     //some useEffects for fetch calls. we aren't rendering anything here except a button, but we'll use these for logic purposes.
@@ -40,6 +41,26 @@ export const FavoriteBtn = ({resource, resource_id}) => {
           });
       }, []);
 
+      useEffect(() => {
+        if (resource === "photos"){
+        fetchIt(`http://localhost:8000/favorites?photos`)
+          .then((data) => {
+            setFavPhotos(data);
+            buttonPressed(false)
+          });} else if (resource==="parks"){
+            fetchIt(`http://localhost:8000/favorites?parks`)
+            .then((data) => {
+              setFavParks(data);
+              buttonPressed(false)
+            });
+          } else if (resource==="blogs"){
+            fetchIt(`http://localhost:8000/favorites?blogs`)
+            .then((data) => {
+              setFavBlogs(data);
+              buttonPressed(false)
+            });
+          }
+      }, [button]);
 
     //POST and DELETE functions for the onClicks
 
@@ -60,13 +81,31 @@ export const FavoriteBtn = ({resource, resource_id}) => {
         
     }
 
-    const createFavBlog = () =>{
-        
+    const createFavBlog = (id) =>{
+      const copy = { 
+        blog_id: id
     }
 
-    const createFavPark = () =>{
-        
+    fetchIt(`http://localhost:8000/favorites`, {
+        method: "POST",
+        body: JSON.stringify(copy)
+    }).then(() => {
+        blogFavorite()
+    })
     }
+
+    const createFavPark  = (id) =>{
+      const copy = { 
+          park_id: id
+      }
+
+      fetchIt(`http://localhost:8000/favorites`, {
+          method: "POST",
+          body: JSON.stringify(copy)
+      }).then(() => {
+          parkFavorite()
+      })
+  }
 
     const removeFavPhoto = (id) =>{
         const copy = {
@@ -79,24 +118,51 @@ export const FavoriteBtn = ({resource, resource_id}) => {
         })
     }
 
-    const removeFavEvent = () =>{
-        
-    }
+    const removeFavEvent = (id) =>{
+      const copy = {
+          photo_id: id
+      }
 
-    const removeFavBlog = () =>{
-        
-    }
+      fetchIt(`http://localhost:8000/favorites/32`, {
+          method: "DELETE",
+          body: JSON.stringify(copy)
+      })
+  }
 
-    const removeFavPark = () =>{
+    const removeFavBlog = (id) =>{
+      const copy = {
+          blog_id: id
+      }
 
-    }
+      fetchIt(`http://localhost:8000/favorites/32`, {
+          method: "DELETE",
+          body: JSON.stringify(copy)
+      })
+  }
+
+    const removeFavPark = (id) =>{
+      const copy = {
+          park_id: id
+      }
+
+      fetchIt(`http://localhost:8000/favorites/32`, {
+          method: "DELETE",
+          body: JSON.stringify(copy)
+      })
+  }
 
 
     //this is the section where the [resource]Favorite functions live. They render the special buttons for each resource you can favorite
     const blogFavorite = () => {
-        return<>
-        <button className="favorite-btn"><p>Add Blog to Favorites</p> </button>
-        </>
+          let arrayOfIds = []
+          favBlogs.map((fav)=>{
+            arrayOfIds.push(fav?.post?.id)
+          })
+          if(arrayOfIds.includes(resource_id)){
+             return <><button className="favorite-btn" onClick={()=>{removeFavBlog(resource_id); buttonPressed(true)}}><p>Remove Blog from Favorites</p></button></>
+          } else {
+              return <><button className="favorite-btn" onClick={()=>{createFavBlog(resource_id); buttonPressed(true)}}><p>Add Blog to Favorites</p></button></>
+            }
     }
     const photoFavorite = () =>{
                 let arrayOfIds = []
@@ -104,16 +170,23 @@ export const FavoriteBtn = ({resource, resource_id}) => {
                     arrayOfIds.push(fav?.photo?.id)
                 })
                 if(arrayOfIds.includes(resource_id)){
-                    return <><button className="favorite-btn" onClick={()=>{removeFavPhoto(resource_id)}}><p>Remove Photo from Favorites</p></button></>
+                    return <><button className="favorite-btn" onClick={()=>{removeFavPhoto(resource_id); buttonPressed(true)}}><p>Remove Photo from Favorites</p></button></>
                 } else {
-                    return <><button className="favorite-btn" onClick={()=>{createFavPhoto(resource_id)}}><p>Add Photo to Favorites</p></button></>
+                    return <><button className="favorite-btn" onClick={()=>{createFavPhoto(resource_id); buttonPressed(true)}}><p>Add Photo to Favorites</p></button></>
                 }
     }
 
     const parkFavorite = () =>{
-        return <>
-        <button className="favorite-btn"><p>Add Park to Favorites</p> </button>
-        </>
+        let arrayOfIds = []
+          favParks.map((fav)=>{
+            arrayOfIds.push(fav?.park?.id)
+          })
+          if(arrayOfIds.includes(resource_id)){
+             return <><button className="favorite-btn" onClick={()=>{removeFavPark(resource_id); buttonPressed(true)}}><p>Remove Park from Favorites</p></button></>
+          } else {
+              return <><button className="favorite-btn" onClick={()=>{createFavPark(resource_id); buttonPressed(true)}}><p>Add Park to Favorites</p></button></>
+            }
+
     }
     const eventFavorite = () =>{
         return <>

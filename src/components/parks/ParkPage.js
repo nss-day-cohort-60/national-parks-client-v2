@@ -158,7 +158,7 @@ export const ParkPage = () => {
               <p>
                 {park.latitude},{park.longitude}
               </p>
-              <FavoriteBtn />
+              <FavoriteBtn resource={"parks"} resource_id={Number(park_id)}/>
             </section>
           </div>
         </div>
