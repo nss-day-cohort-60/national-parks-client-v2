@@ -10,6 +10,7 @@ export const FavoriteBtn = ({resource, resource_id}) => {
     const [favParks, setFavParks] = useState([])
     const [favPhotos, setFavPhotos] = useState([])
     const [button, buttonPressed] = useState(false)
+
     
     //some useEffects for fetch calls. we aren't rendering anything here except a button, but we'll use these for logic purposes.
     useEffect(() => {
@@ -168,10 +169,8 @@ export const FavoriteBtn = ({resource, resource_id}) => {
 
     //this is the section where the [resource]Favorite functions live. They render the special buttons for each resource you can favorite
     const blogFavorite = () => {
-          let arrayOfIds = []
-          favBlogs.map((fav)=>{
-            arrayOfIds.push(fav?.post?.id)
-          })
+          let arrayOfIds = favBlogs.map(fav=>
+            fav?.post?.id)
           if(arrayOfIds.includes(resource_id)){
              return <><button className="favorite-btn" onClick={()=>{removeFavBlog(resource_id); buttonPressed(true)}}><p>Remove Blog from Favorites</p></button></>
           } else {
@@ -179,10 +178,8 @@ export const FavoriteBtn = ({resource, resource_id}) => {
             }
     }
     const photoFavorite = () =>{
-                let arrayOfIds = []
-                favPhotos.map((fav)=>{
-                    arrayOfIds.push(fav?.photo?.id)
-                })
+              let arrayOfIds = favPhotos.map(fav=>
+                fav?.photo?.id)
                 if(arrayOfIds.includes(resource_id)){
                     return <><button className="favorite-btn" onClick={()=>{removeFavPhoto(resource_id); buttonPressed(true)}}><p>Remove Photo from Favorites</p></button></>
                 } else {
@@ -191,10 +188,8 @@ export const FavoriteBtn = ({resource, resource_id}) => {
     }
 
     const parkFavorite = () =>{
-        let arrayOfIds = []
-          favParks.map((fav)=>{
-            arrayOfIds.push(fav?.park?.id)
-          })
+        let arrayOfIds = favParks.map(fav=>
+            fav?.park?.id)
           if(arrayOfIds.includes(resource_id)){
              return <><button className="favorite-btn" onClick={()=>{removeFavPark(resource_id); buttonPressed(true)}}><p>Remove Park from Favorites</p></button></>
           } else {
@@ -203,10 +198,8 @@ export const FavoriteBtn = ({resource, resource_id}) => {
 
     }
     const eventFavorite = () =>{
-      let arrayOfIds = []
-      favEvents.map((fav)=>{
-        arrayOfIds.push(fav?.event?.id)
-      })
+      let arrayOfIds = favEvents.map(fav=>
+        fav?.event?.id)
       if(arrayOfIds.includes(resource_id)){
          return <><button className="favorite-btn" onClick={()=>{removeFavEvent(resource_id); buttonPressed(true)}}><p>Remove Event from Favorites</p></button></>
       } else {
@@ -216,16 +209,18 @@ export const FavoriteBtn = ({resource, resource_id}) => {
 
     //verifyFavorite figures out which function needs to be called, based on the resource prop
     const verifyFavorite = () => {
-        if (resource === "photos"){
+        if (localStorage.getItem("np_token")&&resource === "photos"){
             return photoFavorite()
-        } else if (resource === "events"){
+        } else if (localStorage.getItem("np_token")&&resource === "events"){
             return eventFavorite()
-        } else if (resource === "blogs"){
+        } else if (localStorage.getItem("np_token")&&resource === "blogs"){
             return blogFavorite()
-        } else if (resource === "parks"){
+        } else if (localStorage.getItem("np_token")&&resource === "parks"){
             return parkFavorite()
-        }
+        } else {
+          return <></>
     }
+  }
 
     return <>{
         verifyFavorite()

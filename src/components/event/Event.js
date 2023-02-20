@@ -33,11 +33,11 @@ export const Event = ({ event, setViewingEvent, setShowingEventForm, deleteEvent
           Change this event
         </button>
         
-        <button className="regButton--red" href="javascript:;" onClick={() => deleteEvent(event)}>
+        <button className="regButton--red" onClick={() => deleteEvent(event)}>
           Delete this event
         </button></> : <button className="regButton" onClick={()=> [signUp(), setViewingEvent(null)]}>Register For This Event!</button>}
         </>
-        <a className="close" href="javascript:;" onClick={() => setViewingEvent(null)}>Back to calendar</a>
+        <a className="close" onClick={() => setViewingEvent(null)}>Back to calendar</a>
       </Modal>
     )
   }
