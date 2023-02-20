@@ -54,7 +54,7 @@ export const Blogs = ({ searchTermState, blogs }) => {
   return (
     <div>
       {loggedIn ? (
-        <button className="save-blog" onClick={toggleBlogModal}>
+        <button className="button-3" onClick={toggleBlogModal}>
           Add a Blog
         </button>
       ) : (
