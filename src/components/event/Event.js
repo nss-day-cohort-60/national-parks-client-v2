@@ -17,7 +17,7 @@ export const Event = ({ event, setViewingEvent, setShowingEventForm, deleteEvent
   }
   
     return (
-      <Modal onClose={() => setViewingEvent(null)} title={`${event.name} (${event.type})`} className="eventModal">
+      <Modal onClose={() => setViewingEvent(null)} title={`${event.name} (${event.park.name})`} className="eventModal">
         <p>From <b>{event.start_date}</b> to <b>{event.end_date}</b></p>
         <p>{event.description}</p>
         <>
