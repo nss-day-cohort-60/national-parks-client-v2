@@ -10,7 +10,6 @@ export const FavoriteBtn = ({resource, resource_id}) => {
     const [favParks, setFavParks] = useState([])
     const [favPhotos, setFavPhotos] = useState([])
     const [button, buttonPressed] = useState(false)
-    const navigate = useNavigate()
     
     //some useEffects for fetch calls. we aren't rendering anything here except a button, but we'll use these for logic purposes.
     useEffect(() => {
@@ -57,6 +56,12 @@ export const FavoriteBtn = ({resource, resource_id}) => {
             fetchIt(`http://localhost:8000/favorites?blogs`)
             .then((data) => {
               setFavBlogs(data);
+              buttonPressed(false)
+            });
+          } else if (resource==="events"){
+            fetchIt(`http://localhost:8000/favorites?events`)
+            .then((data) => {
+              setFavEvents(data);
               buttonPressed(false)
             });
           }
