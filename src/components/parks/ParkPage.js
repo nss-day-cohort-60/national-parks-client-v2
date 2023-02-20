@@ -34,7 +34,7 @@ const PictureCard = ({ title, image, body, created }) => {
 
 const TextCard = ({ title, subtitle, body }) => {
   return (
-    <div className="card col-sm-12 col-md-3 my-2 mx-2 park-card">
+    <div className="card col-sm-12 col-md-4 my-2 park-card">
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
         {subtitle ? (
@@ -47,6 +47,19 @@ const TextCard = ({ title, subtitle, body }) => {
     </div>
   );
 };
+
+const CampCard = ({title, subtitle, image, body}) => {
+  return (
+    <div className="card">
+      <img src={image} className="card-img-top camp-image my-2 mx-2" alt="campground-image" />
+      <div className="card-body">
+        <h5 className="card-title">{title}</h5>
+        <h6 className="card-subtitle text-muted mt-2 mb-2">Available Sites: {subtitle}</h6>
+        <p className="card-description">{body}</p>
+      </div>
+    </div>
+  );
+}
 
 export const ParkPage = () => {
   const { park_id } = useParams();
@@ -87,6 +100,7 @@ export const ParkPage = () => {
     fetch(`http://localhost:8000/campgrounds?park_id=${park_id}`)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
         setCampgrounds(data);
       });
   }, []);
@@ -141,8 +155,7 @@ export const ParkPage = () => {
       <div className="container">
         <div className="row park-row">
           <div className="col-sm-12 col-md-7">
-              <PhotoCarousel
-                resource={parkPhotos}/>
+            <PhotoCarousel resource={parkPhotos} />
           </div>
           <div className="col-sm-12 col-md-5">
             <section>
@@ -159,9 +172,11 @@ export const ParkPage = () => {
             </section>
           </div>
         </div>
-
+        <div>
+          <hr></hr>
+        </div>
         <div className="row">
-          <h1>Blogs</h1>
+          <h1 className="parkPage-subheader">Blogs</h1>
           {blogs.map((blog) => (
             <PictureCard
               title={blog.title}
@@ -170,9 +185,12 @@ export const ParkPage = () => {
               created={blog.date_created}
             />
           ))}
+          <div>
+            <hr></hr>
+          </div>
         </div>
         <div className="row">
-          <h1>Wildlife</h1>
+          <h1 className="parkPage-subheader">Wildlife</h1>
           {wildlife.map((animal) => (
             <PictureCard
               title={animal.name}
@@ -180,20 +198,9 @@ export const ParkPage = () => {
               body={animal.information}
             />
           ))}
-        </div>
-        <div className="row">
-          <h1>Campgrounds</h1>
-          {campgrounds.map((camp) => (
-            <TextCard
-              title={camp.name}
-              subtitle={`Available sites: ${camp.available_sites}`}
-              body={camp.description}
-            />
-          ))}
-        </div>
-        <div className="row">
-          <h1>Amenities</h1>
-          {Amenity()}
+          <div>
+            <hr></hr>
+          </div>
         </div>
         <div className="row">
           <h1>Natural Attractions</h1>
@@ -204,6 +211,32 @@ export const ParkPage = () => {
               body={attraction.description}
             />
           ))}
+          <div>
+            <hr></hr>
+          </div>
+        </div>
+        <h1 className="parkPage-subheader">Campgrounds</h1>
+        <div className="row">
+          {campgrounds.map((camp) => (
+            <div className="col-sm-12 col-md-4 me-5">
+              <CampCard
+                image={camp.image}
+                title={camp.name}
+                subtitle={camp.available_sites}
+                body={camp.description}
+              />
+            </div>
+          ))}
+          <div>
+            <hr></hr>
+          </div>
+        </div>
+        <div className="row">
+          <h1 className="parkPage-subheader">Amenities</h1>
+          {Amenity()}
+        </div>
+        <div>
+          <hr></hr>
         </div>
       </div>
     </>

@@ -14,7 +14,6 @@
     display: flex;
     font-size: 40px;
     margin-left: 20px;
-    font-weight: bold;
     margin-top: 25px;
     margin-bottom: 30px;
     justify-content: center;
@@ -68,18 +67,13 @@ body.active-blogModal, body.active-editModal {
     outline: none;
 }
 
-.card-title {
-    font-size: 25px;
-    margin-top: 5px;
-    font-weight: bold;
-    
-}
 
 .blog-details {
     display:flex;
     justify-content: space-between;
     flex-direction: column;
     max-width: 1000px;  
+    text-align: justify;
 }
 
 .secondRow {
@@ -113,16 +107,18 @@ margin-bottom: 20px;
     margin-bottom: 20px;
 }
 
-.save-blog {
-    margin-top: 25px;
-    margin-left: 0;
-  }
 .card-image {
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    width:  400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
 }
+
 .blog-text {
     margin-right: 50px;
 }
+
 .filter {
     height: 30px;
     padding: 5px;
@@ -136,4 +132,13 @@ margin-bottom: 20px;
     margin-top: 5px;
     border-radius: 5px;
     border: 1px solid  rgb(87, 85, 85);
+}
+.card-title {
+    font-size: 25px;
+    margin-top: 5px;
+    font-weight: bold;  
+}
+
+.blog-title {
+    font-weight: bold;
 }
