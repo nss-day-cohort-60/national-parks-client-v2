@@ -100,13 +100,13 @@ export const DayLabels = () => {
   
   // An individual event displayed within the calendar grid itself
   // can be clicked to open the main event view
-  export const MiniEvent = ({ event, setViewingEvent }) => {
+  export const MiniEvent = ({ event, setViewingEvent, setShowingEventForm }) => {
     const firstWord = event.park.name ? event.park.name.split(" ")[0] : "standard";
   
     return (
       <div 
         className={`miniEvent ${firstWord}`} 
-        onClick={() => setViewingEvent(event)}
+        onClick={() => [setViewingEvent(event), setShowingEventForm(false)]}
       >
         {event.name}
       </div>

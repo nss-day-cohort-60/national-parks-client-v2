@@ -70,7 +70,7 @@ export const EventForm = ({ setShowingEventForm, addEvent, editEvent, withEvent,
           ) : (
               <Fragment>
               <button onClick={() => addEvent(event)}>Add event to calendar</button>
-              <a className="close" href="javascript:;" onClick={() => setShowingEventForm({ visible: false })}>Cancel (go back to calendar)</a>
+              <a className="close" href="javascript:;" onClick={() => [setShowingEventForm({ visible: false }), setViewingEvent(false)]}>Cancel (go back to calendar)</a>
             </Fragment>
           )}
         </div>
