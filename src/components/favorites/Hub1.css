@@ -6,6 +6,7 @@
 
 .hub-carousel {
     margin-bottom: 200px;
+    z-index: 0;
 }
 
 .hub-subtitle {
