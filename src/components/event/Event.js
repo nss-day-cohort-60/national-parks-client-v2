@@ -4,7 +4,7 @@ import { fetchIt } from "../auth/fetchIt"
 
 export const Event = ({ event, setViewingEvent, setShowingEventForm, deleteEvent, setEvents }) => {
   console.log(event)
-  const isStaff = localStorage.getItem('np_token').is_staff
+  const isStaff = JSON.parse(localStorage.getItem('np_token')).staff
 
   const signUp = () => {
     event = {...event, "register": true}
