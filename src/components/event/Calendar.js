@@ -68,6 +68,17 @@ export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) 
     const editEvent = (event) => {
         setIsLoading(true)
         setShowingEventForm({ visible: false })
+        
+        event.event_type = event.event_type.id
+        event.park = event.park.id
+        
+        fetch(`http://localhost:8000/events/${event.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(event)
+        })
 
         setTimeout(() => {
             const parsedEvent = parseEvents([event])
@@ -85,6 +96,15 @@ export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) 
     const deleteEvent = (event) => {
         setIsLoading(true)
         setViewingEvent(null)
+
+        
+        fetch(`http://localhost:8000/events/${event.id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(event)
+        })
 
         setTimeout(() => {
             const updatedEvents = [...events].filter(finalEvent => finalEvent.id != event.id)
