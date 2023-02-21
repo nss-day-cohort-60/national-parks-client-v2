@@ -63,7 +63,7 @@ export const MyBlogs = () => {
       <div className="container">
         <div>
           {loggedIn ? (
-            <button className="button-3" onClick={toggleBlogModal}>
+            <button className="button-3 ms-2" onClick={toggleBlogModal}>
               Add a Blog
             </button>
           ) : (
@@ -84,22 +84,22 @@ export const MyBlogs = () => {
                       <img
                         src={blog.photo.url}
                         alt="blog photos"
-                        className="blog-img"
+                        className="blog-img mb-4"
                       />
                     ) : (
                       <div className="no-image"></div>
                     )}
                     <div>
-                      <h5 className="blog-title">{blog.title}</h5>
+                      <h5 className="blog-title ms-2">{blog.title}</h5>
                     </div>
                     <div className="blog-post">
-                      <p>{blog.post_body}</p>
+                      <p className="ms-2">{blog.post_body}</p>
                     </div>
                   </div>
                 </header>
                 <div>
                   <button
-                    className="button-2"
+                    className="button-2 ms-2"
                     id={blog.id}
                     onClick={(e) => {
                       return [setEditId(blog.id), toggleEditModal()];

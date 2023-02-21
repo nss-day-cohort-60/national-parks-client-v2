@@ -10,17 +10,22 @@
 .welcome {
   color: rgb(200, 236, 200);
   font-size: 20px;
-  width: 20%;
+  width: 25%;
+  margin-bottom: 9px;
+  margin-left: auto;
 }
 
 .navbar__logo {
-  width: 7%;
+  width: 90px;
   margin-left: 5%;
   padding: 8px;
 }
 
+
+
 ul {
   list-style-type: none;
+  display: flex;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -42,4 +47,47 @@ li a {
 li a:hover {
   background-color: #111;
   color: green;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+
+
+/* On screens that are 768px or less, apply the following styles */
+@media screen and (max-width: 768px) {
+
+
+
+/* Change the flex-direction of the top_bar which holds the logo and ul */
+.top_bar{
+  flex-direction: column;
+  justify-content: right;
+  position:relative;
+}
+
+/*move the logo to the top left corner (using top:0 and left:0) and make sure it fits inside the navbar*/
+.navbar__logo {
+  width: 90px;
+  position:absolute;
+  top:0;
+  left:0;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/*Change the flex direction of all the li's (which contain the nav links) to column to that they are stacked vertically*/
+/*Also make the ul invisible by setting its display to none*/
+ul{
+  flex-direction: column;
+  justify-content: left;
+}
+
 }
