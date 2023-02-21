@@ -29,10 +29,10 @@ export const Grid = ({ date, events, setViewingEvent, setShowingEventForm, actua
               className={`cell ${date.date.getTime() == currentDate.getTime() ? "current" : ""} ${date.date.getMonth() != actualDate.getMonth() ? "otherMonth" : ""}`
                           }>
               <div className="date">
-                {date.date.getDate()}<a href="javascript:;" className="addEventOnDay" onClick={() => setShowingEventForm({ visible: true, preselectedDate: date.date })}>+</a>
+                {date.date.getDate()}<a href="javascript:;" className="addEventOnDay" onClick={() => [setShowingEventForm({ visible: true, preselectedDate: date.date }), setViewingEvent(false)]}>+</a>
               </div>
               {date.events.map((event, index) => 
-                              <MiniEvent key={index} event={event} setViewingEvent={setViewingEvent} />
+                              <MiniEvent key={index} event={event} setViewingEvent={setViewingEvent} setShowingEventForm={setShowingEventForm} />
                           )}
             </div>
           )
