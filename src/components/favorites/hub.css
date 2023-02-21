@@ -1,12 +1,12 @@
 .box {
-   max-height: 200px;
+   max-height: 250px;
    overflow-y: auto;
    text-align: justify;
 }
 
 .hub-carousel {
-    margin-bottom: 200px;
-    z-index: 0;
+     margin-bottom: 30px; 
+
 }
 
 .hub-subtitle {
@@ -14,7 +14,7 @@
 }
 
 .hub-title {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .hub-events::-webkit-scrollbar {

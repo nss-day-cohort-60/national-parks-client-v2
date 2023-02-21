@@ -60,7 +60,7 @@ li a:hover {
 
 
 
-/* Change the flex-drection of the top_bar which holds the logo and ul */
+/* Change the flex-direction of the top_bar which holds the logo and ul */
 .top_bar{
   flex-direction: column;
   justify-content: right;
@@ -78,7 +78,7 @@ li a:hover {
 }
 
 
-/*Channge the flex direction of all the li's (which contain the nav links) to column to that they are stacked vertically*/
+/*Change the flex direction of all the li's (which contain the nav links) to column to that they are stacked vertically*/
 /*Also make the ul invisible by setting its display to none*/
 ul{
   display:none;

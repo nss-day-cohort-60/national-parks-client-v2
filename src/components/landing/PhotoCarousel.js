@@ -58,7 +58,7 @@ export const PhotoCarousel = ({resource}) => {
     <div className="carousel">
         <button className="carousel--button prev" onClick={() => prevButtonPressed(true)} >&#171;</button>
         <button className="carousel--button next" onClick={() => nextButtonPressed(true)}>&#187;</button>
-        <ul>
+        <ul className="carousel-ul">
     {
         resource.map(
             (photo) => {
@@ -94,7 +94,7 @@ export const PhotoCarousel = ({resource}) => {
     <div className="carousel">
         <button className="carousel--button prev" onClick={() => prevButtonPressed(true)} >&#171;</button>
         <button className="carousel--button next" onClick={() => nextButtonPressed(true)}>&#187;</button>
-        <ul>
+        <ul className="carousel-ul">
     {
         resource.map(
             (photo) => {
@@ -123,7 +123,7 @@ export const PhotoCarousel = ({resource}) => {
     <div className="fav--carousel">
         <button className="fav--carousel--button prev" onClick={() => prevButtonPressed(true)} >&#171;</button>
         <button className="fav--carousel--button next" onClick={() => nextButtonPressed(true)}>&#187;</button>
-        <ul>
+        <ul className="carousel-ul">
     {
         resource.map(
             (fav) => {

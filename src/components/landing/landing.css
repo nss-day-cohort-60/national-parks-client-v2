@@ -96,8 +96,8 @@
 }
 
 .fav--carousel {
-    width: 95%;
-    height: 50%;
+    width: 100%;
+    height: 350px;
     position: relative;
 }
 
@@ -108,7 +108,7 @@
 }
 
 .fav--carousel--slide > img {
-    width: 750px;
+    width: 100%;
     height: 350px;
     object-fit: cover;
     object-position: center; 
@@ -133,7 +133,7 @@
     position: absolute;
     border: none;
     font-size: 4rem;
-    top: 75%;
+    top: 50%;
     z-index: 2;
     transform: translateY(-50%);
     color: rgba(255, 255, 255, .5);
@@ -154,11 +154,11 @@
 }
 
  .fav--carousel--button.prev {
-    left: 1rem;
+    left: 0.5%;
 }
 
 .fav--carousel--button.next {
-    left: 40rem;
+    right: 0.5%;
 } 
 
 #taglines::before{
