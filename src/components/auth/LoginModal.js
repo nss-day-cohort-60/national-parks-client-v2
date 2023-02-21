@@ -148,8 +148,8 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
             value={email}
             onChange={(evt) => setEmail(evt.target.value)}
             onKeyUp={(evt) => {
-              if (evt.key === 'Enter') {
-                handleLogin()
+              if (evt.key === "Enter") {
+                handleLogin();
               }
             }}
             className="form-control"
@@ -164,6 +164,11 @@ export const LoginModal = ({ show, handleClose, setLoggedIn }) => {
           </label>
           <input
             onChange={(evt) => setPassword(evt.target.value)}
+            onKeyUp={(evt) => {
+              if (evt.key === "Enter") {
+                handleLogin();
+              }
+            }}
             type="password"
             id="password"
             className="form-control"

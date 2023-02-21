@@ -83,11 +83,11 @@ export const UserHub = () => {
       </div>
       <div className="container-fluid mb-5">
         <div className="row ms-1 d-flex justify-content-evenly">
-          <div className="col-sm-12 col-md-5">
+          <div className="col-sm-12 col-md-5 mb-5 mb-md-0">
             <h3 className="hub-subtitle">Events</h3>
             <div className="box hub-events">{findFavorites(events)}</div>
           </div>
-          <div className="col-sm-12 col-md-5">
+          <div className="col-sm-12 col-md-5 mb-5 mb-md-0">
             <h3 className="hub-subtitle">Blogs</h3>
             <div className="box hub-blogs">{findFavorites(blogs)}</div>
           </div>
