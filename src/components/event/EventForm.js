@@ -3,7 +3,11 @@ import { dateToInputFormat, Modal } from "./Utilities"
 import "./Calendar.css"
 
 export const EventForm = ({ setShowingEventForm, addEvent, editEvent, withEvent, setViewingEvent, preselectedDate }) => {
-    const newEvent = withEvent || {}
+    const newEvent = withEvent || {
+      name: "",
+      park: 1,
+      event_type: 1
+    }
     if (!withEvent && !!preselectedDate) {
       newEvent.start_date = dateToInputFormat(preselectedDate)
     }

@@ -6,6 +6,7 @@ import { Navigation } from "./CalendarNav"
 import { toStartOfDay, DAYS_SHORT, Loader, Feedback, DayLabels, parseEvents } from "./Utilities"
 import "./Calendar.css"
 import { fetchIt } from "../auth/fetchIt"
+import { ParkFilter } from "./ParkFilter"
 
 
 
@@ -13,7 +14,7 @@ import { fetchIt } from "../auth/fetchIt"
 // Some config for convenience
 const MOCK_LOADING_TIME = 1000
 
-export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) => {
+export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [], eventSetter, park_id }) => {
 
     const selectedDate = new Date(year, month - 1)
 
@@ -38,7 +39,6 @@ export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) 
         setEvents(parsedEvents)
     }, [databaseEvents])
 
-
     const addEvent = (event) => {
         setIsLoading(true)
         setShowingEventForm({ visible: false })
@@ -50,8 +50,9 @@ export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) 
             method: "POST",
             body: JSON.stringify(post_event)
         })
+        .then(res => res.JSON)
+        .then(() => {window.location.reload()})
             .catch(error => console.log(error))
-
 
         setTimeout(() => {
             const parsedEvents = parseEvents([event])
@@ -68,6 +69,17 @@ export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) 
     const editEvent = (event) => {
         setIsLoading(true)
         setShowingEventForm({ visible: false })
+        
+        event.event_type = event.event_type.id
+        event.park = event.park.id
+        
+        fetch(`http://localhost:8000/events/${event.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(event)
+        })
 
         setTimeout(() => {
             const parsedEvent = parseEvents([event])
@@ -85,6 +97,15 @@ export const Calendar = ({ month, year, preloadedEvents, databaseEvents = [] }) 
     const deleteEvent = (event) => {
         setIsLoading(true)
         setViewingEvent(null)
+
+        
+        fetch(`http://localhost:8000/events/${event.id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(event)
+        })
 
         setTimeout(() => {
             const updatedEvents = [...events].filter(finalEvent => finalEvent.id != event.id)
