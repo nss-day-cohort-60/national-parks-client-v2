@@ -1,57 +1,63 @@
-# National Parks
+# National Parks 
+### All things National Parks in one place!
 
-* This is a group learning project with both client and server parts. 
+ ###### * a full-stack group learning project *
+ Requirements were: 
 
-  We decided to build an app that allows users to browse various national parks, view their amenities and local wildlife, and upload and read blogs about the parks. Users can also favorite parks, events, blogs, and photos, and view a dedicated page for managing their own blogs. The application also features a calendar for displaying events, which can be registered for or favorited by users.
+  1. Support CRUD operations on 1, or more, features
+  2. Implement one or more 1 -> ∞ relationships, and one or more ∞ -> ∞ relationships.
+  3. At least one creation form must have a dropdown/radio button group/checkbox group to attached related resources to it.
+  4. One of the lists of resources must implement a filtering mechanism in the UI. The filtering must happen at the server, not in the client.
+  5. Login and register must be implemented to track data for multiple users.
+  6. Users should only be able to edit/delete their own data.
 
-* Our team of five spent two days creating the concept, wireframe, ERD and gathering/creating seed data
-* Two Agile scrum sprints were completed, during which the project client and server were built.
- - Week 1 concluded with a client exceeding our MVP requirements and a server buit on python and SQL queries
- - Week 2 (client side) concluded with a further updated client with improved styling and a near-fully responsive layout
- - Week 2 (server side) rebuilding the server to utilize Django REST framework instead of pure python/SQL
+
+Our team of five spent two days creating the concept, wireframe, ERD and gathering/creating seed data and models 
+
+Two Agile scrum sprints were completed, during which the project client and server were built:
  
- We were allowed to develop our own project management and ticketing strategies, which was perhaps the toughest part of the project 😅
+  * Week 1 concluded with a client exceeding our MVP requirements and a server built in python and SQL queries
+  * Week 2 (client side) concluded with a further updated client with improved styling and a near-fully responsive layout
+  * Week 2 (server side) rebuilding the server to utilize Django REST framework instead of pure python/SQL
+ 
+We were given leeway to develop our own project management and ticketing strategies, which was perhaps the toughest part of the project 😅
 
-# Nation Parks Project Overview
+## Project Overview
 
-* 
-National Parks is a web application that 
-National Parks is a full-stack web application that was built as a learning project to practice implementing CRUD operations on multiple features and relationships. The project features one or more 1 -> ∞ relationships, and one or more ∞ -> ∞ relationships.
+National Parks is a responsive web application intended to allow park visitors to have one place with all the resources and information about US national parks.
+Users should be able to view and/or interact with a variety of park information and create and view public blog posts.
 
-Some of the key features of the project include:
+## Feature Highlights
 
-CRUD operations on national parks, amenities, local wildlife, and blogs.
-One or more 1 -> ∞ relationships between national parks and their amenities, local wildlife, and blogs.
-One or more ∞ -> ∞ relationships between users and their favorite parks, events, blogs, and photos.
-A creation form with a dropdown/radio button group/checkbox group for attaching related resources to it.
-A list of resources that implements a filtering mechanism in the UI that happens on the server, not in the client.
-Login and registration for tracking data for multiple users.
-Users can only edit and delete their own data.
-Table of Contents
-Project Overview
-Features
-Installation
-Usage
-Contributing
-License
-Features
-Browse national parks and view their amenities and local wildlife.
-Read and upload blogs about national parks.
-Favorite parks, events, blogs, and photos.
-Manage your own blogs.
-View a calendar of events and register or favorite them.
-Login and registration for multiple users.
-Users can only edit and delete their own data.
-Installation
+#### Switch between map and card views for national parks:
+
+
+#### View details about specific parks like location, history, wildlife and amenities:
+
+
+#### View, create and favorite blogs about each park:
+
+
+#### Update and delete personally created blogs:
+
+
+#### View, add, favorite and register for park events:
+##### (Staff can modify and delete events)
+
+
+#### View all favorites on one page:
+
+
+#### Responsive design:
+
+
+## Installation
 Instructions for how to install the project and any dependencies.
 
-Usage
-Instructions for how to use the project.
+## Tech Stack
 
-Contributing
-Instructions for how to contribute to the project, including guidelines for submitting pull requests and reporting issues.
 
-License
-Information about the project's license.
+## Credits & Acknowledgements
 
-Feel free to customize this template to fit the specific needs of your project. If you have any other questions or need further assistance, feel free to ask.
+
+
