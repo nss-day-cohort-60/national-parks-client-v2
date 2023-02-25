@@ -26,6 +26,7 @@ We were given leeway to develop our own project management and ticketing strateg
 
 National Parks is a responsive web application intended to allow park visitors to have one place with all the resources and information about US national parks.
 Users should be able to view and/or interact with a variety of park information and create and view public blog posts.
+The front end is coded with React18 and ES6, styled with Bootstrap and CSS.
 
 ## Feature Highlights
 
@@ -52,12 +53,29 @@ Users should be able to view and/or interact with a variety of park information 
 
 
 ## Installation
-Instructions for how to install the project and any dependencies.
+Follow the steps below to download and run this project on your computer
+- [ ] Server is required for full site functionality. View here: https://github.com/nss-day-cohort-60/national-parks-django-api
+- [ ] Clone this repo
+- [ ] From repo directory, run "npm install react"
+- [ ] Run something about leaflet and another thing and bootstrap maybe
+- [ ] Run "npm start"
+
 
 ## Tech Stack
 
+![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
 ## Credits & Acknowledgements
 
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
+![KakaoTalk](https://img.shields.io/badge/kakaotalk-ffcd00.svg?style=for-the-badge&logo=kakaotalk&logoColor=000000)
+
+![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)
 
