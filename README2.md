@@ -10,7 +10,7 @@
  - Week 2 (client side) concluded with a further updated client with improved styling and a near-fully responsive layout
  - Week 2 (server side) rebuilding the server to utilize Django REST framework instead of pure python/SQL
  
- We were allowed to develop our own project management and ticketing strategies, which was perhaps the toughst part of the project 😅
+ We were allowed to develop our own project management and ticketing strategies, which was perhaps the toughest part of the project 😅
 
 # Nation Parks Project Overview
 
