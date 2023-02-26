@@ -31,16 +31,13 @@ The front end is coded with React18 and ES6, styled with Bootstrap and CSS.
 ## Feature Highlights
 
 #### Switch between map and card views for national parks:
-
+![Park map/cards demo](https://github.com/nss-day-cohort-60/national-parks-client-v2/blob/main/parkmap.gif)
 
 #### View details about specific parks like location, history, wildlife and amenities:
+![Park map/cards demo](https://github.com/nss-day-cohort-60/national-parks-client-v2/blob/main/parkpage.gif)
 
-
-#### View, create and favorite blogs about each park:
-
-
-#### Update and delete personally created blogs:
-
+#### View, create and favorite blogs about each park then update or delete personal blogs:
+![Park map/cards demo](https://github.com/nss-day-cohort-60/national-parks-client-v2/blob/main/blogs.gif)
 
 #### View, add, favorite and register for park events:
 ##### (Staff can modify and delete events)
