@@ -41,13 +41,13 @@ The front end is coded with React18 and ES6, styled with Bootstrap and CSS.
 
 #### View, add, favorite and register for park events:
 ##### (Staff can modify and delete events)
-
+![Park map/cards demo](https://github.com/nss-day-cohort-60/national-parks-client-v2/blob/main/events.gif)
 
 #### View all favorites on one page:
-
+![Park map/cards demo](https://github.com/nss-day-cohort-60/national-parks-client-v2/blob/main/userhub.gif)
 
 #### Responsive design:
-
+![Park map/cards demo](https://github.com/nss-day-cohort-60/national-parks-client-v2/blob/main/phoneview.gif)
 
 ## Installation
 Follow the steps below to download and run this project on your computer
@@ -86,12 +86,11 @@ Follow the steps below to download and run this project on your computer
 
 * Search & filter functions
 * Blog editing and deleting
-* Contributor to Events CRUD functionality
+* Contributor to Events CRUD functions
 
 
 ### Maia Dutta
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mvdutta)
-[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/john-m-doll)
 
 * Wildlife entries
 * Bootstrap incorporation and CSS refactoring
