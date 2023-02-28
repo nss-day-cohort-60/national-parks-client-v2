@@ -14,9 +14,11 @@
 
 Our team of five spent two days creating the concept, wireframe, ERD and gathering/creating seed data and models 
 
+[Planning ERD & Wireframe on miro](https://miro.com/app/board/uXjVPwu3sLM=/?share_link_id=948251926765)
+
 Two Agile scrum sprints were completed, during which the project client and server were built:
- 
-  * Week 1 concluded with a client exceeding our MVP requirements and a server built in python and SQL queries
+
+  * Week 1 concluded with a client exceeding our MVP requirements and a server built in python and SQL queries 
   * Week 2 (client side) concluded with a further updated client with improved styling and a near-fully responsive layout
   * Week 2 (server side) rebuilding the server to utilize Django REST framework instead of pure python/SQL
  
@@ -70,45 +72,14 @@ Follow the steps below to download and run this project on your computer
 
 ## Credits & Acknowledgements
 
-### Hazel Preza
-[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/segadreamgirl)
-[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hazelpreza)
-
-* Photo carousel, site layout, CSS styling
-* Favoriting
-* User Hub
-* Something with parks
-
-
-### John Doll
-[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://www.github.com/JohnMDoll)
-[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/john-m-doll)
-
-* Search & filter functions
-* Blog editing and deleting
-* Contributor to Events CRUD functions
+|<h3>Hazel Preza</h3>  |<h3>John Doll</h3>  |<h3>Maia Dutta</h3> |<h3>Shaina Couch</h3>|<h3>Vanessa Spear</h3> |
+|:--------------------:|:------------------:|:------------------:|:-------------------:|:---------------------:|
+|[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/segadreamgirl) [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hazelpreza) |       [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://www.github.com/JohnMDoll) [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/john-m-doll)|     [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mvdutta)|        [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shaibird) [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shaina-couch)|      [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vanessaspear)[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vanessavspear) |
+|Photo carousel, site layout, CSS styling    |    Search & filter functions    |    Wildlife entries    |    Blogs page       |    Parks map    |
+|Favoriting           |    Blog editing and deleting     |    Bootstrap incorporation and CSS refactoring   |Events page      |  Something else with parks |
+|User Hub             |  Contributor to Events CRUD functions |   Login & Registration modals    |Campgrounds and Amenities entries    |    ???    |
+|Something with parks |     README           |                           |                   |                     |
+ 
 
 
-### Maia Dutta
-[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mvdutta)
 
-* Wildlife entries
-* Bootstrap incorporation and CSS refactoring
-* Login & Registration modals
-
-
-### Shaina Couch
-[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shaibird)
-[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shaina-couch)
-
-* Blogs page
-* Events page
-* Campgrounds and Amenities entries
-
-### Vanessa Spear
-[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vanessaspear)
-[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vanessavspear)
-
-* Parks map
-* Something else with parks
-* ???
