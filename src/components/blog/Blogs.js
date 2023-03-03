@@ -73,7 +73,7 @@ export const Blogs = ({ searchTermState, blogs }) => {
           <MyCard
             key={`blog--${blog.id}`}
             title={blog.title}
-            image={blog.photo?.url}
+            image={`http://localhost:8000${blog.photo?.image}`}
             body={blog.post_body}
             blog_id={blog.id}
           />

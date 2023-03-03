@@ -62,19 +62,19 @@ export const PhotoCarousel = ({resource}) => {
     {
         resource.map(
             (photo) => {
-                let source = photo.url
+                let source = photo.image
                 return resource.indexOf(photo) === currentPhoto 
                 ?<>
-                {document.getElementById("landing--top").style.backgroundImage=`url(${source})`}
+                {document.getElementById("landing--top").style.backgroundImage=`url(http://localhost:8000${source})`}
                 {document.getElementById("landing--top").style.backgroundRepeat=`none`}
                 {document.getElementById("landing--top").style.backgroundPosition=`center`}
                 <li className="carousel--slide" data-active >
-                <img src={photo.url} alt='uploaded image' key={photo.id}/>
+                <img src={`http://localhost:8000${photo.image}`} alt='uploaded image' key={photo.id}/>
                 </li>
                 </>
                 :<>
                 <li className="carousel--slide" >
-                <img src={photo.url} alt='uploaded image'  key={photo.id} />
+                <img src={`http://localhost:8000${photo.image}`} alt='uploaded image'  key={photo.id} />
                 </li>
                 </>
             }
@@ -101,12 +101,12 @@ export const PhotoCarousel = ({resource}) => {
                 return resource.indexOf(photo) === currentPhoto 
                 ?<>
                 <li className="carousel--slide" data-active key={photo.id} >
-                <img src={photo.url} alt='uploaded image' />
+                <img src={`http://localhost:8000${photo.image}`} alt='uploaded image' />
                 </li>
                 </>
                 :<>
                 <li className="carousel--slide" key={photo.id} >
-                <img src={photo.url} alt='uploaded image' />
+                <img src={`http://localhost:8000${photo.image}`} alt='uploaded image' />
                 </li>
                 </>
             }
@@ -130,12 +130,12 @@ export const PhotoCarousel = ({resource}) => {
                 return resource.indexOf(fav) === currentPhoto 
                 ?<>
                 <li className="fav--carousel--slide" data-active key={fav?.photo?.id} >
-                <img src={fav?.photo?.url} alt='uploaded image' />
+                <img src={`http://localhost:8000${fav?.photo?.image}`} alt='uploaded image' />
                 </li>
                 </>
                 :<>
                 <li className="fav--carousel--slide" key={fav?.photo?.id} >
-                <img src={fav?.photo?.url} alt='uploaded image' />
+                <img src={`http://localhost:8000${fav?.photo?.image}`} alt='uploaded image' />
                 </li>
                 </>
             }

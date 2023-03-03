@@ -82,7 +82,7 @@ export const MyBlogs = () => {
                   <div className="blog-details">
                     {blog.photo ? (
                       <img
-                        src={blog.photo.url}
+                        src={`http://localhost:8000${blog.photo.image}`}
                         alt="blog photos"
                         className="blog-img mb-4"
                       />

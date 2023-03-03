@@ -11,7 +11,7 @@ export const Park = ({ park }) => {
             fetch(`http://localhost:8000/photos?user_id=11&park_id=${park.id}`)
             .then( res => res.json() )
             .then( (photosArray) => {
-                const parkPhoto = photosArray[0]["url"]
+                const parkPhoto = photosArray[0]["image"]
                 setPhoto(parkPhoto)
             })  
         },
