@@ -16,7 +16,7 @@ const MyCard = ({ title, image, body, blog_id }) => {
   return (
     <div className="card my-5 mx-5">
       <div className="row no-gutters">
-        {image ? (
+        {image.includes("/media") ? (
           <div className="col-sm-12 col-md-4 my-3 mx-3">
             <img src={image} className="img-fluid card-image" alt="blog-img" />
           </div>
