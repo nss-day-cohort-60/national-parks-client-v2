@@ -46,7 +46,7 @@ export const UserHub = () => {
               <h5>{fav?.post?.title}</h5>
               {fav.hasOwnProperty("post") && fav?.post?.photo !== null ? (
                 <img
-                  src={fav?.post?.photo?.url}
+                  src={`http://localhost:8000${fav?.post?.photo?.image}`}
                   className="park-page--sect-photo"
                 />
               ) : (

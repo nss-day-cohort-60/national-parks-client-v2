@@ -190,7 +190,7 @@ export const ParkPage = () => {
           {blogs.map((blog) => (
             <PictureCard
               title={blog.title}
-              image={blog?.photo?.url}
+              image={blog?.photo?.image.includes("/media") ? `http://localhost:8000${blog?.photo?.image}`: ""}
               body={blog.post_body}
               created={blog.date_created}
             />
@@ -204,7 +204,7 @@ export const ParkPage = () => {
           {wildlife.map((animal) => (
             <PictureCard
               title={animal.name}
-              image={animal.image}
+              image={`http://localhost:8000${animal.image}`}
               body={animal.information}
             />
           ))}
@@ -230,7 +230,7 @@ export const ParkPage = () => {
           {campgrounds.map((camp) => (
             <div className="col-sm-12 col-md-4 me-5">
               <CampCard
-                image={camp.image}
+                image={`http://localhost:8000${camp.image}`}
                 title={camp.name}
                 subtitle={camp.available_sites}
                 body={camp.description}
