@@ -190,7 +190,7 @@ export const ParkPage = () => {
           {blogs.map((blog) => (
             <PictureCard
               title={blog.title}
-              image={`http://localhost:8000${blog?.photo?.image}`}
+              image={blog?.photo?.image.includes("/media") ? `http://localhost:8000${blog?.photo?.image}`: ""}
               body={blog.post_body}
               created={blog.date_created}
             />
